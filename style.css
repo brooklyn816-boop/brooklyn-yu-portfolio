@@ -1,0 +1,807 @@
+/* ===========================
+   Global
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    font-family:
+        "Inter",
+        "Segoe UI",
+        "PingFang SC",
+        "Microsoft YaHei",
+        sans-serif;
+
+    background: #F7F6F2;
+
+    color: #222;
+
+}
+
+
+/* ===========================
+   Logo
+=========================== */
+
+.logo {
+
+    position: fixed;
+
+    top: 55px;
+
+    left: 60px;
+
+}
+
+
+/* ===========================
+   Bottom Navigation
+=========================== */
+
+.bottom-nav {
+
+    position: fixed;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 45px;
+
+    padding: 18px 42px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, .78);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, .08);
+
+    z-index: 999;
+
+}
+
+.bottom-nav a {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+
+    text-decoration: none;
+
+    transition: .35s ease;
+
+}
+.nav-cn {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #222;
+
+}
+
+.nav-en {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #999;
+
+    transition: .35s;
+
+}
+
+.bottom-nav a:hover .nav-cn {
+
+    color: #111;
+
+}
+
+.bottom-nav a:hover .nav-en {
+
+    color: #666;
+
+}
+
+
+.bottom-nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 100%;
+
+    height: 2px;
+
+    background: #222;
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition: .3s ease;
+
+}
+
+
+.bottom-nav a:hover {
+
+    color: #111;
+
+    transform: translateY(-3px);
+
+}
+
+
+.bottom-nav a:hover::after {
+
+    transform: scaleX(1);
+
+}
+
+.bottom-nav a:hover {
+
+    color: #111;
+
+}
+
+
+/* ===========================
+   Section
+=========================== */
+
+.section {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    padding:
+
+        120px 80px 120px 80px;
+
+}
+
+
+/* ===========================
+   HOME
+=========================== */
+
+.home {
+
+    padding-top: 80px;
+
+}
+
+
+.hero-left {
+
+    width: 50%;
+
+}
+
+
+.hero-left h1 {
+
+    font-size: 96px;
+
+    line-height: 1;
+
+    margin-bottom: 40px;
+
+}
+
+
+.slogan {
+
+    font-size: 28px;
+
+    height: 50px;
+
+    color: #444;
+
+    margin-bottom: 35px;
+
+}
+
+
+.job {
+
+    color: #777;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.hero-right {
+
+    width:60%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    perspective:1200px;
+
+}
+.photo-card{
+
+    width:60%;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    transition:
+transform .6s cubic-bezier(.22,.61,.36,1);
+
+    transform-style:preserve-3d;
+
+    will-change:transform;
+
+}
+
+.photo-card img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:28px;
+
+    pointer-events:none;
+
+}
+
+.hero-right img {
+
+    width: 85%;
+
+    border-radius: 28px;
+
+    object-fit: cover;
+
+}
+
+
+/* ===========================
+   Timeline
+=========================== */
+
+.timeline {
+
+    width: 240px;
+
+    position: sticky;
+
+    top: 150px;
+
+    height: fit-content;
+
+}
+
+
+.timeline h3 {
+
+    margin-bottom: 30px;
+
+    font-size: 18px;
+
+}
+
+
+.timeline ul {
+
+    list-style: none;
+
+}
+
+
+.timeline li {
+
+    margin-bottom: 24px;
+
+}
+
+
+.timeline a {
+
+    text-decoration: none;
+
+    color: #777;
+
+    transition: .25s;
+
+}
+
+
+.timeline a:hover {
+
+    color: #111;
+
+}
+
+
+/* ===========================
+   Right Content
+=========================== */
+
+.content {
+
+    flex: 1;
+
+}
+
+
+.card {
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 50px;
+
+    margin-bottom: 50px;
+
+    box-shadow:
+
+        0 8px 30px rgba(0, 0, 0, .05);
+
+}
+
+
+.card h2 {
+
+    margin-bottom: 20px;
+
+    font-size: 32px;
+
+}
+
+
+.card p {
+
+    color: #666;
+
+    line-height: 1.8;
+
+}
+
+/* =====================
+Skills
+===================== */
+
+
+.skill-list {
+
+    display: flex;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+.skill-card {
+
+    width: 150px;
+
+    height: 170px;
+
+    background: #F7F6F2;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    transition: .3s;
+
+}
+
+
+.skill-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+
+.skill-card {
+
+    position: relative;
+
+    width: 150px;
+
+    height: 170px;
+
+    background: #F7F6F2;
+
+    border-radius: 20px;
+
+    padding: 35px 25px;
+
+    transition: .35s ease;
+
+    overflow: visible;
+
+}
+
+
+
+.skill-icon {
+
+    position: absolute;
+
+    top: -35px;
+
+    left: 50%;
+
+    transform:
+
+        translateX(-50%) translateY(20px);
+
+    font-size: 34px;
+
+    opacity: 0;
+
+    transition: .35s ease;
+
+}
+
+
+
+.skill-card:hover {
+
+    transform: translateY(-10px);
+
+}
+
+
+
+.skill-card:hover .skill-icon {
+
+    opacity: 1;
+
+    transform:
+
+        translateX(-50%) translateY(0);
+
+}
+
+
+
+.skill-card h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.skill-card p {
+
+    font-size: 14px;
+
+}
+/* Project submenu */
+
+.sub-menu {
+
+    max-height:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    margin-top:0;
+
+    transition:
+    max-height .4s ease,
+    opacity .3s ease,
+    margin-top .3s ease;
+
+}
+
+
+.project-menu.active .sub-menu {
+
+    max-height:400px;
+
+    opacity:1;
+
+    margin-top:15px;
+
+}
+
+
+.project-menu.active .sub-menu {
+
+    max-height:300px;
+
+    opacity:1;
+
+}
+
+
+.sub-menu li {
+
+    margin-bottom:10px;
+
+}
+
+
+.sub-menu a {
+
+    font-size:13px;
+
+    color:#999;
+
+}
+
+
+.sub-menu a:hover {
+
+    color:#222;
+
+}
+
+
+
+.project-menu.active .sub-menu {
+    display:block;
+}
+.cursor-dot{
+
+    position:fixed;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:rgba(255,255,255,.9);
+
+    box-shadow:
+
+        0 0 10px rgba(255,255,255,.8),
+
+        0 0 20px rgba(255,220,180,.45);
+
+    animation:trail .75s linear forwards;
+
+    z-index:99999;
+
+}
+
+
+@keyframes trail{
+
+    from{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:scale(.2);
+
+    }
+
+}
+
+
+
+
+/* ===========================
+   Mobile Version
+=========================== */
+
+@media screen and (max-width:768px){
+
+
+/* 页面整体 */
+
+.section{
+
+    min-height:auto;
+
+    display:block;
+
+    padding:70px 20px;
+
+}
+
+
+/* 首页 */
+
+.home{
+
+    padding-top:100px;
+
+}
+
+
+.hero-left{
+
+    width:100%;
+
+}
+
+
+.hero-left h1{
+
+    font-size:48px;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+}
+
+
+.slogan{
+
+    height:auto;
+
+    min-height:40px;
+
+    font-size:20px;
+
+    margin-bottom:25px;
+
+}
+
+
+.job{
+
+    font-size:14px;
+
+}
+
+
+/* 图片 */
+
+.hero-right{
+
+    width:100%;
+
+    margin-top:20px;
+
+}
+
+
+.photo-card{
+
+    width:55%;
+
+    margin:auto;
+
+}
+
+
+
+/* 左侧菜单 */
+
+.timeline{
+
+    width:100%;
+
+    position:relative;
+
+    top:auto;
+
+    margin-bottom:35px;
+
+}
+
+
+/* 内容卡片 */
+
+.card{
+
+    padding:25px 18px;
+
+    border-radius:18px;
+
+}
+
+
+
+/* 底部菜单 */
+
+.bottom-nav{
+
+    left:50%;
+
+    bottom:15px;
+
+    width:calc(100% - 30px);
+
+    padding:12px 10px;
+
+    gap:0;
+
+    justify-content:space-around;
+
+}
+
+
+.bottom-nav a{
+
+    flex:1;
+
+}
+
+
+.nav-cn{
+
+    font-size:11px;
+
+}
+
+
+.nav-en{
+
+    font-size:7px;
+
+    letter-spacing:1px;
+
+}
+
+.timeline .sub-menu{
+
+    display:none;
+
+}
+
+}
