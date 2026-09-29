@@ -1,6 +1,6 @@
-/* ===========================
-   Global
-=========================== */
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 * {
     margin: 0;
@@ -9,13 +9,10 @@
 }
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
 body {
-
     font-family:
         "Inter",
         "Segoe UI",
@@ -24,356 +21,244 @@ body {
         sans-serif;
 
     background: #F7F6F2;
-
     color: #222;
-
 }
 
 
-/* ===========================
-   Logo
-=========================== */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo {
-
     position: fixed;
-
     top: 55px;
-
     left: 60px;
-
 }
 
 
-/* ===========================
-   Bottom Navigation
-=========================== */
+/* =========================================================
+   BOTTOM NAVIGATION
+========================================================= */
 
 .bottom-nav {
-
     position: fixed;
-
     bottom: 30px;
-
     left: 50%;
-
     transform: translateX(-50%);
 
     display: flex;
-
     gap: 45px;
 
     padding: 18px 42px;
 
     border-radius: 999px;
 
-    background: rgba(255, 255, 255, .78);
-
+    background: rgba(255, 255, 255, 0.78);
     backdrop-filter: blur(18px);
 
     box-shadow:
-        0 10px 40px rgba(0, 0, 0, .08);
+        0 10px 40px rgba(0, 0, 0, 0.08);
 
     z-index: 999;
-
 }
 
 .bottom-nav a {
-
     position: relative;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     gap: 4px;
 
     text-decoration: none;
 
-    transition: .35s ease;
-
+    transition: 0.35s ease;
 }
+
 .nav-cn {
-
     font-size: 15px;
-
     font-weight: 600;
-
     color: #222;
-
 }
 
 .nav-en {
-
     font-size: 11px;
-
     letter-spacing: 2px;
-
     text-transform: uppercase;
-
     color: #999;
 
-    transition: .35s;
-
+    transition: 0.35s;
 }
 
 .bottom-nav a:hover .nav-cn {
-
     color: #111;
-
 }
 
 .bottom-nav a:hover .nav-en {
-
     color: #666;
-
 }
 
-
 .bottom-nav a::after {
-
     content: "";
 
     position: absolute;
-
     left: 0;
-
     bottom: -8px;
 
     width: 100%;
-
     height: 2px;
 
     background: #222;
 
     transform: scaleX(0);
-
     transform-origin: center;
 
-    transition: .3s ease;
-
+    transition: 0.3s ease;
 }
-
 
 .bottom-nav a:hover {
-
-    color: #111;
-
     transform: translateY(-3px);
-
 }
-
 
 .bottom-nav a:hover::after {
-
     transform: scaleX(1);
-
-}
-
-.bottom-nav a:hover {
-
-    color: #111;
-
 }
 
 
-/* ===========================
-   Section
-=========================== */
+/* =========================================================
+   SECTION
+========================================================= */
 
 .section {
-
     min-height: 100vh;
 
     display: flex;
 
-    padding:
-
-        120px 80px 120px 80px;
-
+    padding: 120px 80px;
 }
 
 
-/* ===========================
+/* =========================================================
    HOME
-=========================== */
+========================================================= */
 
 .home {
-
     padding-top: 80px;
-
 }
-
 
 .hero-left {
-
     width: 50%;
-
 }
-
 
 .hero-left h1 {
-
     font-size: 96px;
-
     line-height: 1;
-
     margin-bottom: 40px;
-
 }
 
-
 .slogan {
-
     font-size: 28px;
-
     height: 50px;
 
     color: #444;
 
     margin-bottom: 35px;
-
 }
-
 
 .job {
-
     color: #777;
-
     font-size: 18px;
-
     letter-spacing: 1px;
-
 }
-
 
 .hero-right {
+    width: 60%;
 
-    width:60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    perspective:1200px;
-
+    perspective: 1200px;
 }
-.photo-card{
 
-    width:60%;
+.photo-card {
+    width: 60%;
 
-    border-radius:28px;
-
-    overflow:hidden;
+    border-radius: 28px;
+    overflow: hidden;
 
     transition:
-transform .6s cubic-bezier(.22,.61,.36,1);
+        transform 0.6s cubic-bezier(.22,.61,.36,1);
 
-    transform-style:preserve-3d;
-
-    will-change:transform;
-
+    transform-style: preserve-3d;
+    will-change: transform;
 }
 
-.photo-card img{
+.photo-card img {
+    width: 100%;
+    display: block;
 
-    width:100%;
-
-    display:block;
-
-    border-radius:28px;
-
-    pointer-events:none;
-
+    border-radius: 28px;
+    pointer-events: none;
 }
 
 .hero-right img {
-
     width: 85%;
 
     border-radius: 28px;
-
     object-fit: cover;
-
 }
 
 
-/* ===========================
-   Timeline
-=========================== */
+/* =========================================================
+   TIMELINE
+========================================================= */
 
 .timeline {
-
     width: 240px;
 
     position: sticky;
-
     top: 150px;
 
     height: fit-content;
-
 }
 
-
 .timeline h3 {
-
     margin-bottom: 30px;
 
     font-size: 18px;
-
 }
-
 
 .timeline ul {
-
     list-style: none;
-
 }
-
 
 .timeline li {
-
     margin-bottom: 24px;
-
 }
-
 
 .timeline a {
-
     text-decoration: none;
-
     color: #777;
 
-    transition: .25s;
-
+    transition: 0.25s;
 }
-
 
 .timeline a:hover {
-
     color: #111;
-
 }
 
 
-/* ===========================
-   Right Content
-=========================== */
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
 
 .content {
-
     flex: 1;
-
 }
 
-
 .card {
-
-    background: white;
+    background: #fff;
 
     border-radius: 24px;
 
@@ -382,77 +267,36 @@ transform .6s cubic-bezier(.22,.61,.36,1);
     margin-bottom: 50px;
 
     box-shadow:
-
-        0 8px 30px rgba(0, 0, 0, .05);
-
+        0 8px 30px rgba(0, 0, 0, 0.05);
 }
-
 
 .card h2 {
-
     margin-bottom: 20px;
-
     font-size: 32px;
-
 }
-
 
 .card p {
-
     color: #666;
-
     line-height: 1.8;
-
 }
 
-/* =====================
-Skills
-===================== */
 
+/* =========================================================
+   SKILLS
+========================================================= */
 
 .skill-list {
-
     display: flex;
 
     gap: 20px;
 
     flex-wrap: wrap;
-
 }
-
-
 
 .skill-card {
-
-    width: 150px;
-
-    height: 170px;
-
-    background: #F7F6F2;
-
-    border-radius: 20px;
-
-    padding: 25px;
-
-    transition: .3s;
-
-}
-
-
-.skill-card:hover {
-
-    transform: translateY(-8px);
-
-}
-
-
-
-.skill-card {
-
     position: relative;
 
     width: 150px;
-
     height: 170px;
 
     background: #F7F6F2;
@@ -461,347 +305,870 @@ Skills
 
     padding: 35px 25px;
 
-    transition: .35s ease;
+    transition: 0.35s ease;
 
     overflow: visible;
-
 }
 
-
+.skill-card:hover {
+    transform: translateY(-10px);
+}
 
 .skill-icon {
-
     position: absolute;
 
     top: -35px;
-
     left: 50%;
 
     transform:
-
         translateX(-50%) translateY(20px);
 
     font-size: 34px;
 
     opacity: 0;
 
-    transition: .35s ease;
-
+    transition: 0.35s ease;
 }
-
-
-
-.skill-card:hover {
-
-    transform: translateY(-10px);
-
-}
-
-
 
 .skill-card:hover .skill-icon {
-
     opacity: 1;
 
     transform:
-
         translateX(-50%) translateY(0);
-
 }
-
-
 
 .skill-card h3 {
-
     font-size: 18px;
-
     margin-bottom: 10px;
+}
 
+.skill-card p {
+    font-size: 14px;
 }
 
 
-.skill-card p {
+/* =========================================================
+   PROJECT SUBMENU
+========================================================= */
+
+.sub-menu {
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    margin-top: 0;
+
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease,
+        margin-top 0.3s ease;
+}
+
+.project-menu.active .sub-menu {
+    max-height: 500px;
+
+    opacity: 1;
+
+    margin-top: 15px;
+}
+
+.sub-menu li {
+    margin-bottom: 10px;
+}
+
+.sub-menu a {
+    font-size: 13px;
+    color: #999;
+}
+
+.sub-menu a:hover {
+    color: #222;
+}
+
+.project-menu.active .sub-menu {
+    display: block;
+}
+
+
+/* =========================================================
+   CURSOR TRAIL
+========================================================= */
+
+.cursor-dot {
+    position: fixed;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 220, 180, 0.45);
+
+    animation:
+        trail 0.75s linear forwards;
+
+    z-index: 99999;
+}
+
+@keyframes trail {
+
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+}
+
+
+/* =========================================================
+   PROJECTS
+   Portfolio Case Studies
+========================================================= */
+
+#projects {
+    display: grid;
+
+    grid-template-columns:
+        230px minmax(0, 1fr);
+
+    gap: 75px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   PROJECT LEFT NAVIGATION
+========================================================= */
+
+#projects .timeline {
+    position: sticky;
+    top: 100px;
+}
+
+#projects .timeline > h3 {
+    margin: 0 0 28px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.04em;
+
+    color: #8B6F55;
+}
+
+#projects .timeline ul {
+    list-style: none;
+}
+
+#projects .project-list,
+#projects .sub-menu {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+#projects .project-list > li {
+    margin-bottom: 28px;
+}
+
+#projects .project-list > li > a {
+    display: block;
+
+    margin-bottom: 11px;
+
+    color: #4E4740;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    transition: 0.25s ease;
+}
+
+#projects .project-list > li > a:hover {
+    color: #8B6F55;
+}
+
+
+/* 左侧二级导航 */
+
+#projects .sub-menu {
+    margin-left: 4px;
+
+    padding-left: 17px;
+
+    border-left:
+        1px solid rgba(139, 111, 85, 0.25);
+}
+
+#projects .sub-menu li {
+    margin-bottom: 7px;
+}
+
+#projects .sub-menu a {
+    display: block;
+
+    color: #9A9188;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    transition: 0.2s ease;
+}
+
+#projects .sub-menu a:hover {
+    color: #8B6F55;
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
+
+#projects .content {
+    min-width: 0;
+}
+
+
+/* 每一个项目 */
+
+#projects .card {
+    margin-bottom: 150px;
+
+    scroll-margin-top: 100px;
+
+    color: #3F3933;
+}
+
+
+/* =========================================================
+   PROJECT NUMBER
+========================================================= */
+
+#projects .project-number {
+    margin-bottom: 12px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    color: #A69A8C;
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+========================================================= */
+
+#projects .card > h2 {
+    margin: 0 0 18px;
+
+    font-size:
+        clamp(30px, 3vw, 44px);
+
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    letter-spacing: -0.025em;
+
+    color: #2F2A25;
+}
+
+
+/* =========================================================
+   PROJECT META / TAGS
+========================================================= */
+
+#projects .project-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 70px;
+}
+
+#projects .project-meta span {
+    padding: 5px 11px;
+
+    border:
+        1px solid rgba(139, 111, 85, 0.25);
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    color: #8B7866;
+
+    background: #FBF9F6;
+}
+
+
+/* =========================================================
+   PROJECT SECTION TITLE
+   项目背景 / 项目目标 / 策划思路 / 执行过程 / 项目结果
+========================================================= */
+
+#projects .card h3 {
+    position: relative;
+
+    margin: 0 0 24px;
+
+    padding: 0;
+
+    color: #8B6F55;
+
+    font-size: 19px;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.05em;
+}
+
+
+/* 去掉之前的黑色竖线 */
+
+#projects .card h3::before {
+    display: none;
+}
+
+
+/* =========================================================
+   PROJECT SUBSECTION
+========================================================= */
+
+#projects .card h4 {
+    margin: 34px 0 15px;
+
+    color: #5F5144;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    letter-spacing: 0.03em;
+}
+
+
+/* =========================================================
+   PROJECT BODY TEXT
+========================================================= */
+
+#projects .card p {
+    margin: 0 0 24px;
+
+    color: #5B554F;
+
+    font-size: 15px;
+
+    line-height: 1.95;
+
+    letter-spacing: 0.015em;
+}
+
+
+/* 连续段落 */
+
+#projects .card p + p {
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+#projects .card hr {
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    margin: 64px 0 60px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-top:
+        1px solid #DED5CA;
+}
+
+
+/* 确保分割线后的标题不会贴线 */
+
+#projects .card hr + h3 {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   LIST
+========================================================= */
+
+#projects .card ul {
+    margin: 14px 0 30px;
+
+    padding-left: 30px;
+}
+
+
+/* 列表文字 */
+
+#projects .card li {
+    margin-bottom: 10px;
+
+    padding-left: 3px;
+
+    color: #5B554F;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+
+/* 小圆点 */
+
+#projects .card li::marker {
+    color: #A58F78;
+
+    font-size: 0.6em;
+}
+
+
+/* =========================================================
+   STRONG TEXT
+========================================================= */
+
+#projects .card strong {
+    color: #463A30;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   HIGHLIGHT NUMBERS
+========================================================= */
+
+#projects .highlight,
+#projects .metric-number {
+    color: #8B6F55;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   RESULT BOX
+========================================================= */
+
+#projects .result-box {
+    margin: 30px 0 38px;
+
+    padding: 24px 28px;
+
+    border-left:
+        2px solid #B8A28B;
+
+    background: #F7F3EE;
+}
+
+#projects .result-box p {
+    margin-bottom: 11px;
+}
+
+#projects .result-box p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   METRICS GRID
+========================================================= */
+
+#projects .metrics-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin: 30px 0 40px;
+}
+
+#projects .metric {
+    padding: 24px;
+
+    background: #F7F3EE;
+
+    border-radius: 14px;
+}
+
+#projects .metric-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 25px;
+
+    line-height: 1.3;
+}
+
+#projects .metric-label {
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PROCESS FLOW
+========================================================= */
+
+#projects .process-flow {
+    margin: 28px 0 38px;
+
+    padding: 24px 26px;
+
+    background: #F7F3EE;
+
+    border-radius: 14px;
+
+    color: #5B554F;
 
     font-size: 14px;
 
-}
-/* Project submenu */
-
-.sub-menu {
-
-    max-height:0;
-
-    overflow:hidden;
-
-    opacity:0;
-
-    margin-top:0;
-
-    transition:
-    max-height .4s ease,
-    opacity .3s ease,
-    margin-top .3s ease;
-
+    line-height: 2;
 }
 
 
-.project-menu.active .sub-menu {
+/* =========================================================
+   REAL TABLE
+========================================================= */
 
-    max-height:400px;
+#projects .case-table-wrapper {
+    width: 100%;
 
-    opacity:1;
+    overflow-x: auto;
 
-    margin-top:15px;
+    margin: 30px 0 42px;
+}
 
+#projects .case-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    color: #514A43;
+
+    font-size: 14px;
+
+    line-height: 1.75;
 }
 
 
-.project-menu.active .sub-menu {
+/* 表头 */
 
-    max-height:300px;
+#projects .case-table th {
+    padding: 15px 18px;
 
-    opacity:1;
+    color: #6F5945;
 
+    background: #F3EEE8;
+
+    font-weight: 600;
+
+    text-align: left;
+
+    vertical-align: top;
+
+    border:
+        1px solid #DED5CA;
 }
 
 
-.sub-menu li {
+/* 表格内容 */
 
-    margin-bottom:10px;
+#projects .case-table td {
+    padding: 16px 18px;
 
+    color: #5B554F;
+
+    background: #FFFFFF;
+
+    vertical-align: top;
+
+    border:
+        1px solid #E4DDD5;
 }
 
 
-.sub-menu a {
+/* =========================================================
+   PROJECT SEPARATION
+========================================================= */
 
-    font-size:13px;
-
-    color:#999;
-
+#projects .card + .card {
+    margin-top: 110px;
 }
 
 
-.sub-menu a:hover {
+/* =========================================================
+   MOBILE
+========================================================= */
 
-    color:#222;
+@media screen and (max-width: 768px) {
 
-}
+    /* 页面 */
 
+    .section {
+        min-height: auto;
 
+        display: block;
 
-.project-menu.active .sub-menu {
-    display:block;
-}
-.cursor-dot{
-
-    position:fixed;
-
-    width:8px;
-
-    height:8px;
-
-    border-radius:50%;
-
-    pointer-events:none;
-
-    background:rgba(255,255,255,.9);
-
-    box-shadow:
-
-        0 0 10px rgba(255,255,255,.8),
-
-        0 0 20px rgba(255,220,180,.45);
-
-    animation:trail .75s linear forwards;
-
-    z-index:99999;
-
-}
-
-
-@keyframes trail{
-
-    from{
-
-        opacity:1;
-
-        transform:scale(1);
-
+        padding: 70px 20px;
     }
 
-    to{
 
-        opacity:0;
+    /* 首页 */
 
-        transform:scale(.2);
-
+    .home {
+        padding-top: 100px;
     }
 
-}
+    .hero-left {
+        width: 100%;
+    }
 
+    .hero-left h1 {
+        font-size: 48px;
 
+        line-height: 1.1;
 
+        margin-bottom: 25px;
+    }
 
-/* ===========================
-   Mobile Version
-=========================== */
+    .slogan {
+        height: auto;
 
-@media screen and (max-width:768px){
+        min-height: 40px;
 
+        font-size: 20px;
 
-/* 页面整体 */
+        margin-bottom: 25px;
+    }
 
-.section{
+    .job {
+        font-size: 14px;
+    }
 
-    min-height:auto;
 
-    display:block;
+    /* 图片 */
 
-    padding:70px 20px;
+    .hero-right {
+        width: 100%;
 
-}
+        margin-top: 20px;
+    }
 
+    .photo-card {
+        width: 55%;
 
-/* 首页 */
+        margin: auto;
+    }
 
-.home{
 
-    padding-top:100px;
+    /* 左侧菜单 */
 
-}
+    .timeline {
+        width: 100%;
 
+        position: relative;
 
-.hero-left{
+        top: auto;
 
-    width:100%;
+        margin-bottom: 35px;
+    }
 
-}
 
+    /* 内容卡片 */
 
-.hero-left h1{
+    .card {
+        padding: 25px 18px;
 
-    font-size:48px;
+        border-radius: 18px;
+    }
 
-    line-height:1.1;
 
-    margin-bottom:25px;
+    /* 底部导航 */
 
-}
+    .bottom-nav {
+        left: 50%;
 
+        bottom: 15px;
 
-.slogan{
+        width:
+            calc(100% - 30px);
 
-    height:auto;
+        padding: 12px 10px;
 
-    min-height:40px;
+        gap: 0;
 
-    font-size:20px;
+        justify-content:
+            space-around;
+    }
 
-    margin-bottom:25px;
+    .bottom-nav a {
+        flex: 1;
+    }
 
-}
+    .nav-cn {
+        font-size: 11px;
+    }
 
+    .nav-en {
+        font-size: 7px;
 
-.job{
+        letter-spacing: 1px;
+    }
 
-    font-size:14px;
 
-}
+    /* 手机端隐藏项目子导航 */
 
+    .timeline .sub-menu {
+        display: none;
+    }
 
-/* 图片 */
 
-.hero-right{
+    /* =====================================================
+       MOBILE PROJECTS
+    ===================================================== */
 
-    width:100%;
+    #projects {
+        display: block;
+    }
 
-    margin-top:20px;
+    #projects .timeline {
+        position: relative;
 
-}
+        top: auto;
 
+        width: 100%;
 
-.photo-card{
+        margin-bottom: 45px;
+    }
 
-    width:55%;
+    #projects .card {
+        margin-bottom: 80px;
 
-    margin:auto;
+        padding: 28px 22px;
+    }
 
-}
+    #projects .card + .card {
+        margin-top: 70px;
+    }
 
+    #projects .card > h2 {
+        font-size: 30px;
 
+        line-height: 1.35;
+    }
 
-/* 左侧菜单 */
+    #projects .project-meta {
+        margin-bottom: 48px;
+    }
 
-.timeline{
+    #projects .card h3 {
+        font-size: 18px;
 
-    width:100%;
+        margin-bottom: 20px;
+    }
 
-    position:relative;
+    #projects .card h4 {
+        font-size: 15px;
 
-    top:auto;
+        margin-top: 28px;
+    }
 
-    margin-bottom:35px;
+    #projects .card p {
+        font-size: 14px;
 
-}
+        line-height: 1.9;
+    }
 
 
-/* 内容卡片 */
+    /* 手机端分割线 */
 
-.card{
+    #projects .card hr {
+        margin: 50px 0 48px;
+    }
 
-    padding:25px 18px;
 
-    border-radius:18px;
+    /* 手机端列表 */
 
-}
+    #projects .card ul {
+        padding-left: 25px;
+    }
 
+    #projects .card li {
+        font-size: 14px;
 
+        padding-left: 2px;
+    }
 
-/* 底部菜单 */
 
-.bottom-nav{
+    /* 手机端数据 */
 
-    left:50%;
+    #projects .metrics-grid {
+        grid-template-columns: 1fr;
+    }
 
-    bottom:15px;
 
-    width:calc(100% - 30px);
+    /* 手机端表格 */
 
-    padding:12px 10px;
-
-    gap:0;
-
-    justify-content:space-around;
-
-}
-
-
-.bottom-nav a{
-
-    flex:1;
-
-}
-
-
-.nav-cn{
-
-    font-size:11px;
-
-}
-
-
-.nav-en{
-
-    font-size:7px;
-
-    letter-spacing:1px;
-
-}
-
-.timeline .sub-menu{
-
-    display:none;
-
-}
+    #projects .case-table {
+        min-width: 620px;
+    }
 
 }
