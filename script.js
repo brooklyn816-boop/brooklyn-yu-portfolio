@@ -25,15 +25,21 @@ document.querySelectorAll(".project-menu > a")
     });
 
 });
+
+
+/* ==========================
+   Butterfly Cursor Trail
+   ========================== */
+
 document.addEventListener("mousemove",function(e){
 
-    const dot=document.createElement("div");
+    const dot = document.createElement("div");
 
-    dot.className="cursor-dot";
+    dot.className = "cursor-dot";
 
-    dot.style.left=e.clientX+"px";
+    dot.style.left = e.clientX + "px";
 
-    dot.style.top=e.clientY+"px";
+    dot.style.top = e.clientY + "px";
 
     document.body.appendChild(dot);
 
@@ -41,12 +47,14 @@ document.addEventListener("mousemove",function(e){
 
         dot.remove();
 
-    },750);
+    },450);
 
 });
-// ==========================
-// Hero 3D Tilt
-// ==========================
+
+
+/* ==========================
+   Hero 3D Tilt
+   ========================== */
 
 // ==========================
 // Hero Parallax
