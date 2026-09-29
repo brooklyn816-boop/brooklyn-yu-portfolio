@@ -1172,3 +1172,240 @@ body {
     }
 
 }
+/* =========================================================
+   EXPERIENCE / 工作经历
+   与 PROJECTS 保持统一视觉系统
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   Experience 整体布局
+--------------------------------------------------------- */
+
+#experience {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+
+/* 左侧导航 */
+
+#experience .timeline {
+    position: sticky;
+    top: 120px;
+}
+
+#experience .timeline h3 {
+    color: #8B6F55;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+#experience .experience-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#experience .experience-list li {
+    margin-bottom: 16px;
+    padding: 0;
+}
+
+#experience .experience-list a {
+    color: #A69A8C;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.25s ease;
+}
+
+#experience .experience-list a:hover {
+    color: #8B6F55;
+}
+
+
+/* ---------------------------------------------------------
+   Experience 右侧内容
+--------------------------------------------------------- */
+
+#experience .content {
+    width: 100%;
+    max-width: 900px;
+}
+
+
+/* 工作经历卡片 */
+
+#experience .card {
+    background: #FFFFFF;
+    border-radius: 4px;
+    padding: 56px 64px;
+    margin-bottom: 64px;
+}
+
+
+/* ---------------------------------------------------------
+   时间
+--------------------------------------------------------- */
+
+#experience .project-number {
+    color: #A69A8C;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+
+/* ---------------------------------------------------------
+   公司名称
+--------------------------------------------------------- */
+
+#experience .card h2 {
+    color: #2F2A25;
+    font-size: 2rem;
+    line-height: 1.35;
+    font-weight: 600;
+    margin: 0 0 18px;
+    letter-spacing: 0.01em;
+}
+
+
+/* ---------------------------------------------------------
+   职位 / 能力标签
+--------------------------------------------------------- */
+
+#experience .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 48px;
+}
+
+#experience .project-meta span {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #F7F3EE;
+    color: #8B6F55;
+    border-radius: 2px;
+    font-size: 0.78rem;
+    line-height: 1.4;
+}
+
+
+/* ---------------------------------------------------------
+   工作经历中的一级模块
+   内容商业化 / 用户研究与数据分析 / 行业分析
+--------------------------------------------------------- */
+
+#experience .card h3 {
+    color: #8B6F55;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 600;
+    margin: 0 0 20px;
+    letter-spacing: 0.02em;
+}
+
+
+/* ---------------------------------------------------------
+   正文
+--------------------------------------------------------- */
+
+#experience .card p {
+    color: #5B554F;
+    font-size: 0.95rem;
+    line-height: 1.9;
+    margin: 0 0 18px;
+    letter-spacing: 0.015em;
+}
+
+#experience .card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* 数字强调 */
+
+#experience .card strong {
+    color: #8B6F55;
+    font-weight: 600;
+}
+
+
+/* ---------------------------------------------------------
+   分割线
+--------------------------------------------------------- */
+
+#experience .card hr {
+    border: 0;
+    border-top: 1px solid #DED5CA;
+    margin: 52px 0 48px;
+}
+
+
+/* ---------------------------------------------------------
+   Representative Projects
+--------------------------------------------------------- */
+
+#experience .card .project-meta + section {
+    margin-top: 0;
+}
+
+
+/* ---------------------------------------------------------
+   让代表项目标签区域与正文保持舒展
+--------------------------------------------------------- */
+
+#experience .card h3 + .project-meta {
+    margin-top: 24px;
+    margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------------
+   移动端
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    #experience {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    #experience .timeline {
+        position: static;
+    }
+
+    #experience .experience-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+    }
+
+    #experience .experience-list li {
+        margin-bottom: 0;
+    }
+
+    #experience .card {
+        padding: 40px 28px;
+        margin-bottom: 40px;
+    }
+
+    #experience .card h2 {
+        font-size: 1.65rem;
+    }
+
+    #experience .project-meta {
+        margin-bottom: 36px;
+    }
+
+    #experience .card hr {
+        margin: 40px 0 36px;
+    }
+
+}
