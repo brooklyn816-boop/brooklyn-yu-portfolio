@@ -36,6 +36,22 @@ img {
 
 
 /* ==========================
+   CURSOR DOT
+   ========================== */
+
+.cursor-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: #8B6F55;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+
+/* ==========================
    GLOBAL
    ========================== */
 
