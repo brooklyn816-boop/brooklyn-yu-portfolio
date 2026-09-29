@@ -36,44 +36,36 @@ img {
 
 
 /* ==========================
-   CURSOR BUTTERFLY TRAIL
+   CURSOR BUTTERFLY
    ========================== */
 
 .cursor-dot {
     position: fixed;
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    opacity: 0.72;
 }
 
-/* 左翅 */
-
-.cursor-dot::before {
-    content: "";
-    position: absolute;
-    width: 5px;
-    height: 7px;
-    left: -2px;
-    top: 1px;
-    background: rgba(173, 216, 230, 0.78);
-    border-radius: 70% 35% 70% 35%;
-    transform: rotate(-28deg);
-}
-
-/* 右翅 */
-
+.cursor-dot::before,
 .cursor-dot::after {
     content: "";
     position: absolute;
-    width: 5px;
-    height: 7px;
-    right: -2px;
     top: 1px;
-    background: rgba(173, 216, 230, 0.78);
-    border-radius: 35% 70% 35% 70%;
+    width: 4px;
+    height: 6px;
+    background: rgba(150, 205, 225, 0.78);
+    border-radius: 70% 30% 65% 35%;
+}
+
+.cursor-dot::before {
+    right: 4px;
+    transform: rotate(-28deg);
+}
+
+.cursor-dot::after {
+    left: 4px;
     transform: rotate(28deg);
 }
 
@@ -105,13 +97,6 @@ img {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.045);
 }
 
-
-/* ==========================
-   TYPOGRAPHY SYSTEM
-   ========================== */
-
-/* 卡片主标题 */
-
 .card h2 {
     margin: 0 0 20px;
     color: #2F2A25;
@@ -120,40 +105,20 @@ img {
     line-height: 1.3;
 }
 
-/* 卡片二级标题 */
-
 .card h3 {
     color: #4B433C;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.5;
 }
-
-/* 卡片三级标题 */
-
-.card h4 {
-    color: #514A44;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.5;
-}
-
-/* 正文 */
 
 .card p {
     color: #6D655D;
     font-size: 15px;
     font-weight: 400;
-    line-height: 1.85;
 }
-
-/* 列表正文 */
 
 .card li {
     color: #6D655D;
     font-size: 15px;
     font-weight: 400;
-    line-height: 1.85;
 }
 
 hr {
@@ -307,14 +272,33 @@ hr {
     letter-spacing: -0.04em;
 }
 
-.slogan {
-    margin-top: 35px;
+.hero-name-line {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    gap: 18px;
+    margin-top: 12px;
+    white-space: nowrap;
+}
+
+.hero-name {
+    color: #302B27;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.035em;
+}
+
+.hero-slogan {
     color: #8B6F55;
     font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    white-space: nowrap;
 }
 
 .job {
-    margin-top: 20px;
+    margin-top: 25px;
     color: #7B736B;
     font-size: 14px;
 }
@@ -391,19 +375,45 @@ hr {
     letter-spacing: 0.16em;
 }
 
+
+/* 项目标题 */
+
+#projects .card > h2 {
+    margin-bottom: 20px;
+    color: #795B45;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+
+/* ==========================
+   PROJECT TAGS
+   ========================== */
+
 .project-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 9px;
     margin: 20px 0 35px;
 }
 
 .project-meta span {
-    padding: 5px 11px;
-    color: #8B6F55;
-    background: #F3EEE8;
+    padding: 6px 12px;
+    color: #806653;
+    background: linear-gradient(
+        180deg,
+        #FBF8F4 0%,
+        #F4EEE8 100%
+    );
+    border: 1px solid #DCCFC2;
     border-radius: 999px;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 2px 8px rgba(91, 70, 53, 0.05);
     font-size: 11px;
+    font-weight: 500;
+    line-height: 1.4;
 }
 
 #projects .card hr {
@@ -418,9 +428,10 @@ hr {
 
 .card section h4 {
     margin: 26px 0 8px;
-    color: #514A44;
-    font-size: 15px;
+    color: #9A806A;
+    font-size: 14px;
     font-weight: 600;
+    line-height: 1.5;
 }
 
 .card section p {
@@ -438,7 +449,7 @@ hr {
 
 .lead {
     color: #514A44 !important;
-    font-weight: 500 !important;
+    font-weight: 500;
 }
 
 
@@ -466,13 +477,11 @@ hr {
     color: #4B433C;
     font-size: 15px;
     font-weight: 600;
-    line-height: 1.5;
 }
 
 .result-item span {
     color: #8A8178;
     font-size: 12px;
-    line-height: 1.6;
 }
 
 
@@ -481,13 +490,42 @@ hr {
    ========================== */
 
 .process-flow {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 12px;
     margin-top: 30px;
-    color: #8B6F55;
-    font-size: 12px;
+    padding: 25px 28px;
+    color: #806653;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(247, 243, 238, 0.95),
+            rgba(252, 250, 247, 0.98)
+        );
+    border: 1px solid #DDD2C7;
+    border-radius: 18px;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 8px 25px rgba(87, 67, 51, 0.045);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.process-flow::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(220, 207, 194, 0.55);
+    border-radius: 13px;
+    pointer-events: none;
+}
+
+.process-flow span {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -495,19 +533,22 @@ hr {
    HIGHLIGHT DATA
    ========================== */
 
-/*
-   桃花坞 Case：
-   91.4% / 7成+ 使用数据卡，
-   与其他项目数据保持统一视觉层级。
-*/
+.case-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+}
 
 .highlight-number {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin: 30px 0;
-    padding: 24px 28px;
+    justify-content: center;
+    min-height: 125px;
+    margin: 0;
+    padding: 20px 24px;
     background: #F7F3EE;
+    border: 1px solid #E7DDD4;
     border-radius: 16px;
 }
 
@@ -516,14 +557,12 @@ hr {
     font-size: 27px;
     font-weight: 600;
     line-height: 1.2;
-    letter-spacing: -0.01em;
 }
 
 .highlight-number span {
-    margin: 0;
+    margin: 6px 0 0;
     color: #81776E;
     font-size: 13px;
-    font-weight: 400;
     line-height: 1.7;
 }
 
@@ -542,7 +581,6 @@ hr {
     width: 100%;
     border-collapse: collapse;
     font-size: 13px;
-    line-height: 1.65;
 }
 
 .case-table th,
@@ -555,14 +593,12 @@ hr {
 
 .case-table th {
     color: #514A44;
-    font-size: 13px;
     font-weight: 600;
     background: #F7F3EE;
 }
 
 .case-table td {
     color: #746C64;
-    font-size: 13px;
     font-weight: 400;
 }
 
@@ -594,7 +630,6 @@ hr {
     font-size: 27px;
     font-weight: 600;
     line-height: 1.2;
-    letter-spacing: -0.01em;
 }
 
 .metric span {
@@ -603,7 +638,23 @@ hr {
     color: #81776E;
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.6;
+}
+
+
+/* ==========================
+   TAKEAWAY
+   ========================== */
+
+.takeaway-divider {
+    margin: 48px 0 36px !important;
+}
+
+.takeaway-title {
+    margin-bottom: 18px !important;
+    color: #4B433C !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
 }
 
 
@@ -648,7 +699,7 @@ hr {
     color: #2F2A25;
     font-size: 28px;
     font-weight: 600;
-    line-height: 1.3;
+    line-height: 1.25;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -659,8 +710,6 @@ hr {
     margin: 0;
     color: #9A9188;
     font-size: 13px;
-    font-weight: 400;
-    line-height: 1.6;
 }
 
 
@@ -678,10 +727,12 @@ hr {
 .skill-card {
     position: relative;
     min-width: 0;
+    min-height: 190px;
     padding: 25px 20px;
     background: #FFFFFF;
     border: 1px solid #EEE8E2;
     border-radius: 18px;
+    overflow: hidden;
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
@@ -696,24 +747,40 @@ hr {
 
 
 /*
-   Emoji 默认隐藏，
-   鼠标放上 Skill 卡片后出现。
+   Emoji：
+   默认完全隐藏，不占任何布局空间。
+   Hover 后从卡片正中心向外浮现。
 */
 
 .skill-icon {
-    margin-bottom: 15px;
-    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    margin: 0;
+    color: #B9DCE9;
+    font-size: 42px;
     line-height: 1;
     opacity: 0;
-    transform: translateY(6px);
+    transform: translate(-50%, -50%) scale(0.35);
+    filter: blur(1px);
     transition:
         opacity 0.3s ease,
-        transform 0.3s ease;
+        transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+        filter 0.4s ease;
+    pointer-events: none;
 }
 
 .skill-card:hover .skill-icon {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 0.48;
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(0);
+}
+
+.skill-card h3,
+.skill-tools {
+    position: relative;
+    z-index: 1;
 }
 
 .skill-card h3 {
@@ -841,9 +908,10 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 35px;
     min-height: 190px;
-    padding: 30px 24px;
+    padding: 28px 24px;
     background: #FFFFFF;
     border: 1px solid #EEE8E2;
     border-radius: 20px;
@@ -904,8 +972,20 @@ hr {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
+    .metrics-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .bottom-nav {
         gap: 30px;
+    }
+
+    .hero-name-line {
+        gap: 14px;
+    }
+
+    .hero-slogan {
+        font-size: 14px;
     }
 }
 
@@ -969,6 +1049,18 @@ hr {
         font-size: 64px;
     }
 
+    .hero-name-line {
+        gap: 12px;
+    }
+
+    .hero-name {
+        font-size: 48px;
+    }
+
+    .hero-slogan {
+        font-size: 13px;
+    }
+
     .hero-right {
         margin-top: 50px;
     }
@@ -984,6 +1076,10 @@ hr {
 
     .contact-card {
         padding: 30px;
+    }
+
+    #projects .card > h2 {
+        font-size: 28px;
     }
 
     .skill-list {
@@ -1002,8 +1098,13 @@ hr {
         grid-template-columns: 1fr;
     }
 
+    .case-highlight-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .highlight-number {
-        padding: 22px 24px;
+        min-height: 110px;
+        padding: 20px;
     }
 
     .highlight-number strong {
@@ -1068,10 +1169,30 @@ hr {
         font-size: 52px;
     }
 
+    .hero-name-line {
+        gap: 8px;
+    }
+
+    .hero-name {
+        font-size: 40px;
+    }
+
+    .hero-slogan {
+        font-size: 11px;
+    }
+
     .section-heading h2,
     .life-heading h2,
     .contact-heading h2 {
         font-size: 24px;
+    }
+
+    #projects .card > h2 {
+        font-size: 25px;
+    }
+
+    .case-highlight-grid {
+        grid-template-columns: 1fr;
     }
 
     .contact-value {
