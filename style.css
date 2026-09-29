@@ -140,6 +140,7 @@ hr {
 }
 
 .bottom-nav a {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -149,11 +150,30 @@ hr {
     font-size: 15px;
     line-height: 1.3;
     white-space: nowrap;
-    transition: color 0.25s ease;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .bottom-nav a:hover {
     color: #8B6F55;
+    transform: translateY(-3px);
+}
+
+.bottom-nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 0;
+    height: 1px;
+    background: #8B6F55;
+    transform: translateX(-50%);
+    transition: width 0.25s ease;
+}
+
+.bottom-nav a:hover::after {
+    width: 24px;
 }
 
 .nav-cn {
@@ -247,6 +267,7 @@ hr {
     overflow: hidden;
     border-radius: 28px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    transition: transform 0.15s ease-out;
 }
 
 .photo-card img {
@@ -323,6 +344,10 @@ hr {
     font-size: 11px;
 }
 
+#projects .card hr {
+    margin: 64px 0 60px;
+}
+
 .card section h3 {
     margin-bottom: 18px;
     font-size: 20px;
@@ -345,6 +370,10 @@ hr {
     color: #6D655D;
 }
 
+.card section li::marker {
+    font-size: 0.6em;
+}
+
 .lead {
     color: #514A44 !important;
     font-weight: 500;
@@ -355,14 +384,10 @@ hr {
    PROJECT RESULT
    ========================== */
 
-.result-box,
-.metrics-grid {
-    display: grid;
-    gap: 16px;
-}
-
 .result-box {
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
     margin: 30px 0;
 }
 
@@ -384,6 +409,11 @@ hr {
     font-size: 12px;
 }
 
+
+/* ==========================
+   PROCESS
+   ========================== */
+
 .process-flow {
     display: flex;
     flex-wrap: wrap;
@@ -394,22 +424,39 @@ hr {
     font-size: 12px;
 }
 
+
+/* ==========================
+   HIGHLIGHT DATA
+   ========================== */
+
+/*
+   桃花坞 Case：
+   91.4% / 7成+ 使用数据卡，
+   不使用巨大的孤立数字。
+*/
+
 .highlight-number {
     display: flex;
     flex-direction: column;
-    margin: 35px 0;
+    gap: 10px;
+    margin: 30px 0;
+    padding: 26px 30px;
+    background: #F7F3EE;
+    border-radius: 16px;
 }
 
 .highlight-number strong {
     color: #8B6F55;
-    font-size: 46px;
-    line-height: 1.1;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
 .highlight-number span {
-    margin-top: 8px;
+    margin: 0;
     color: #81776E;
     font-size: 13px;
+    line-height: 1.7;
 }
 
 
@@ -418,8 +465,9 @@ hr {
    ========================== */
 
 .case-table-wrapper {
+    width: 100%;
     overflow-x: auto;
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
 .case-table {
@@ -430,18 +478,24 @@ hr {
 
 .case-table th,
 .case-table td {
-    padding: 14px 12px;
+    padding: 15px 12px;
     border-bottom: 1px solid #EAE3DC;
     text-align: left;
+    vertical-align: top;
 }
 
 .case-table th {
     color: #514A44;
     font-weight: 600;
+    background: #F7F3EE;
 }
 
 .case-table td {
     color: #746C64;
+}
+
+.case-table tr:last-child td {
+    border-bottom: 0;
 }
 
 
@@ -450,7 +504,9 @@ hr {
    ========================== */
 
 .metrics-grid {
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
     margin: 30px 0;
 }
 
@@ -542,6 +598,7 @@ hr {
 }
 
 .skill-card {
+    position: relative;
     min-width: 0;
     padding: 25px 20px;
     background: #FFFFFF;
@@ -559,15 +616,26 @@ hr {
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
 }
 
+
+/*
+   Emoji 默认隐藏，
+   鼠标放上 Skill 卡片后出现。
+*/
+
 .skill-icon {
     margin-bottom: 15px;
     font-size: 24px;
     line-height: 1;
-    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(6px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
 .skill-card:hover .skill-icon {
-    transform: translateY(-3px) scale(1.08);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .skill-card h3 {
@@ -671,14 +739,14 @@ hr {
    ========================== */
 
 /*
-   Contact 的 #contact 是 section，
-   不是 card。
-   所以这里必须使用 .contact-section。
+   Contact 与其他 section 保持统一：
+   左侧 Timeline
+   右侧 Content
 */
 
 .contact-section {
-    grid-template-columns: 1fr;
-    gap: 0;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 70px;
 }
 
 .contact-section .content {
@@ -739,7 +807,7 @@ hr {
 
 
 /* ==========================
-   MOBILE / TABLET
+   TABLET
    ========================== */
 
 @media (max-width: 1100px) {
@@ -748,6 +816,11 @@ hr {
         grid-template-columns: 180px minmax(0, 1fr);
         gap: 40px;
         width: min(1100px, calc(100% - 60px));
+    }
+
+    .contact-section {
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: 40px;
     }
 
     .skill-list {
@@ -762,17 +835,12 @@ hr {
     .bottom-nav {
         gap: 30px;
     }
-
-    /*
-       Contact 在任何桌面尺寸下
-       都保持整行宽度
-    */
-    .contact-section {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
 }
 
+
+/* ==========================
+   MOBILE
+   ========================== */
 
 @media (max-width: 800px) {
 
@@ -808,6 +876,11 @@ hr {
         display: block;
         width: calc(100% - 40px);
         padding: 90px 0;
+    }
+
+    .contact-section {
+        display: block;
+        width: calc(100% - 40px);
     }
 
     .timeline {
@@ -857,6 +930,14 @@ hr {
         grid-template-columns: 1fr;
     }
 
+    .highlight-number {
+        padding: 24px;
+    }
+
+    .highlight-number strong {
+        font-size: 30px;
+    }
+
     .contact-item {
         min-height: 160px;
     }
@@ -867,9 +948,17 @@ hr {
 }
 
 
+/* ==========================
+   SMALL MOBILE
+   ========================== */
+
 @media (max-width: 500px) {
 
     .section {
+        width: calc(100% - 28px);
+    }
+
+    .contact-section {
         width: calc(100% - 28px);
     }
 
