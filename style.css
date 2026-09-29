@@ -1,10 +1,9 @@
-/* =========================================================
-   GLOBAL
-========================================================= */
+/* ==========================
+   Brooklyn Yu Portfolio
+   Beige Version
+   ========================== */
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -13,278 +12,458 @@ html {
 }
 
 body {
+    margin: 0;
+    background: #F7F6F2;
+    color: #4A443E;
     font-family:
-        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
         "Segoe UI",
         "PingFang SC",
         "Microsoft YaHei",
         sans-serif;
+    line-height: 1.8;
+}
 
-    background: #F7F6F2;
-    color: #222;
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
 }
 
 
-/* =========================================================
+/* ==========================
+   GLOBAL
+   ========================== */
+
+.section {
+    position: relative;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 70px;
+    width: min(1380px, calc(100% - 120px));
+    margin: 0 auto;
+    padding: 120px 0;
+}
+
+.content {
+    min-width: 0;
+}
+
+.card {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.045);
+}
+
+.card h2 {
+    margin: 0 0 20px;
+    color: #2F2A25;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.card h3 {
+    color: #4B433C;
+}
+
+.card p {
+    color: #6D655D;
+}
+
+hr {
+    margin: 50px 0;
+    border: 0;
+    border-top: 1px solid #E9E2DB;
+}
+
+
+/* ==========================
    LOGO
-========================================================= */
+   ========================== */
 
 .logo {
     position: fixed;
-    top: 55px;
-    left: 60px;
+    top: 30px;
+    left: 40px;
+    z-index: 100;
+    color: #3F3933;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
 }
 
 
-/* =========================================================
-   BOTTOM NAVIGATION
-========================================================= */
+/* ==========================
+   BOTTOM NAV
+   ========================== */
 
 .bottom-nav {
     position: fixed;
+    right: 40px;
     bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-
+    z-index: 100;
     display: flex;
-    gap: 45px;
-
-    padding: 18px 42px;
-
+    gap: 24px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid #E8E1D9;
     border-radius: 999px;
-
-    background: rgba(255, 255, 255, 0.78);
-    backdrop-filter: blur(18px);
-
-    box-shadow:
-        0 10px 40px rgba(0, 0, 0, 0.08);
-
-    z-index: 999;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(12px);
 }
 
 .bottom-nav a {
-    position: relative;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
-
-    text-decoration: none;
-
-    transition: 0.35s ease;
-}
-
-.nav-cn {
-    font-size: 15px;
-    font-weight: 600;
-    color: #222;
-}
-
-.nav-en {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #999;
-
-    transition: 0.35s;
-}
-
-.bottom-nav a:hover .nav-cn {
-    color: #111;
-}
-
-.bottom-nav a:hover .nav-en {
-    color: #666;
-}
-
-.bottom-nav a::after {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-
-    width: 100%;
-    height: 2px;
-
-    background: #222;
-
-    transform: scaleX(0);
-    transform-origin: center;
-
-    transition: 0.3s ease;
+    gap: 1px;
+    color: #7A7067;
+    font-size: 10px;
+    transition: color 0.25s ease;
 }
 
 .bottom-nav a:hover {
-    transform: translateY(-3px);
+    color: #8B6F55;
 }
 
-.bottom-nav a:hover::after {
-    transform: scaleX(1);
+.nav-cn {
+    font-size: 11px;
 }
 
-
-/* =========================================================
-   SECTION
-========================================================= */
-
-.section {
-    min-height: 100vh;
-
-    display: flex;
-
-    padding: 120px 80px;
+.nav-en {
+    font-size: 8px;
+    letter-spacing: 0.12em;
 }
 
 
-/* =========================================================
-   HOME
-========================================================= */
-
-.home {
-    padding-top: 80px;
-}
-
-.hero-left {
-    width: 50%;
-}
-
-.hero-left h1 {
-    font-size: 96px;
-    line-height: 1;
-    margin-bottom: 40px;
-}
-
-.slogan {
-    font-size: 28px;
-    height: 50px;
-
-    color: #444;
-
-    margin-bottom: 35px;
-}
-
-.job {
-    color: #777;
-    font-size: 18px;
-    letter-spacing: 1px;
-}
-
-.hero-right {
-    width: 60%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    perspective: 1200px;
-}
-
-.photo-card {
-    width: 60%;
-
-    border-radius: 28px;
-    overflow: hidden;
-
-    transition:
-        transform 0.6s cubic-bezier(.22,.61,.36,1);
-
-    transform-style: preserve-3d;
-    will-change: transform;
-}
-
-.photo-card img {
-    width: 100%;
-    display: block;
-
-    border-radius: 28px;
-    pointer-events: none;
-}
-
-.hero-right img {
-    width: 85%;
-
-    border-radius: 28px;
-    object-fit: cover;
-}
-
-
-/* =========================================================
+/* ==========================
    TIMELINE
-========================================================= */
+   ========================== */
 
 .timeline {
-    width: 240px;
-
     position: sticky;
-    top: 150px;
-
-    height: fit-content;
+    top: 120px;
+    align-self: start;
 }
 
 .timeline h3 {
-    margin-bottom: 30px;
-
-    font-size: 18px;
+    margin: 0 0 25px;
+    color: #3F3933;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
 }
 
 .timeline ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 
 .timeline li {
-    margin-bottom: 24px;
+    margin-bottom: 10px;
 }
 
 .timeline a {
-    text-decoration: none;
-    color: #777;
-
-    transition: 0.25s;
+    color: #9A9188;
+    font-size: 13px;
+    transition: color 0.25s ease;
 }
 
 .timeline a:hover {
-    color: #111;
+    color: #8B6F55;
 }
 
 
-/* =========================================================
-   RIGHT CONTENT
-========================================================= */
+/* ==========================
+   HOME
+   ========================== */
 
-.content {
-    flex: 1;
+.home {
+    min-height: 100vh;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 120px;
 }
 
-.card {
-    background: #FFFFFF;
-
-    border-radius: 24px;
-
-    padding: 50px;
-
-    margin-bottom: 50px;
-
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.05);
+.hero-left h1 {
+    margin: 0;
+    color: #302B27;
+    font-size: clamp(60px, 8vw, 110px);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
 }
 
-.card h2 {
-    margin-bottom: 20px;
-    font-size: 32px;
+.slogan {
+    margin-top: 35px;
+    color: #8B6F55;
+    font-size: 16px;
 }
 
-.card p {
-    color: #666;
-    line-height: 1.8;
+.job {
+    margin-top: 20px;
+    color: #7B736B;
+    font-size: 14px;
+}
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+}
+
+.photo-card {
+    width: min(420px, 100%);
+    overflow: hidden;
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.photo-card img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 
-/* =========================================================
-   COMMON SECTION HEADINGS
-   SKILLS / LIFE / CONTACT
-========================================================= */
+/* ==========================
+   PROJECTS
+   ========================== */
+
+.project-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-menu {
+    margin-bottom: 18px;
+}
+
+.project-menu > a {
+    color: #665D55;
+    font-size: 13px;
+    transition: color 0.25s ease;
+}
+
+.project-menu > a:hover {
+    color: #8B6F55;
+}
+
+.sub-menu {
+    display: none;
+    margin: 8px 0 0 12px;
+    padding: 0;
+    list-style: none;
+}
+
+.project-menu.active .sub-menu {
+    display: block;
+}
+
+.sub-menu li {
+    margin: 4px 0;
+}
+
+.sub-menu a {
+    color: #AAA198;
+    font-size: 12px;
+}
+
+.project-number {
+    margin-bottom: 10px;
+    color: #8B6F55;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0 35px;
+}
+
+.project-meta span {
+    padding: 5px 11px;
+    color: #8B6F55;
+    background: #F3EEE8;
+    border-radius: 999px;
+    font-size: 11px;
+}
+
+.card section h3 {
+    margin-bottom: 18px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card section h4 {
+    margin: 26px 0 8px;
+    color: #514A44;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.card section p {
+    margin: 12px 0;
+}
+
+.card section ul {
+    padding-left: 20px;
+    color: #6D655D;
+}
+
+.lead {
+    color: #514A44 !important;
+    font-weight: 500;
+}
+
+.result-box,
+.metrics-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.result-box {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 30px 0;
+}
+
+.result-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 22px;
+    background: #F7F3EE;
+    border-radius: 16px;
+}
+
+.result-item strong {
+    color: #4B433C;
+}
+
+.result-item span {
+    color: #8A8178;
+    font-size: 12px;
+}
+
+.process-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    color: #8B6F55;
+    font-size: 12px;
+}
+
+.highlight-number {
+    display: flex;
+    flex-direction: column;
+    margin: 35px 0;
+}
+
+.highlight-number strong {
+    color: #8B6F55;
+    font-size: 46px;
+    line-height: 1.1;
+}
+
+.highlight-number span {
+    margin-top: 8px;
+    color: #81776E;
+    font-size: 13px;
+}
+
+.case-table-wrapper {
+    overflow-x: auto;
+    margin-top: 25px;
+}
+
+.case-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.case-table th,
+.case-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #EAE3DC;
+    text-align: left;
+}
+
+.case-table th {
+    color: #514A44;
+    font-weight: 600;
+}
+
+.case-table td {
+    color: #746C64;
+}
+
+.metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 30px 0;
+}
+
+.metric {
+    padding: 25px;
+    background: #F7F3EE;
+    border-radius: 16px;
+}
+
+.metric strong {
+    display: block;
+    color: #8B6F55;
+    font-size: 27px;
+    line-height: 1.2;
+}
+
+.metric span {
+    display: block;
+    margin-top: 8px;
+    color: #81776E;
+    font-size: 12px;
+}
+
+
+/* ==========================
+   EXPERIENCE
+   ========================== */
+
+.experience-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.experience-list li {
+    margin-bottom: 12px;
+}
+
+.experience-list a {
+    color: #9A9188;
+    font-size: 13px;
+}
+
+.experience-list a:hover {
+    color: #8B6F55;
+}
+
+
+/* ==========================
+   SECTION HEADINGS
+   ========================== */
 
 .section-heading,
 .life-heading,
@@ -296,17 +475,11 @@ body {
 .life-heading h2,
 .contact-heading h2 {
     margin: 0 0 8px;
-
     color: #2F2A25;
-
     font-size: 28px;
-
     font-weight: 600;
-
     line-height: 1.25;
-
     letter-spacing: 0.08em;
-
     text-transform: uppercase;
 }
 
@@ -314,1590 +487,364 @@ body {
 .life-heading p,
 .contact-heading p {
     margin: 0;
-
     color: #9A9188;
-
     font-size: 13px;
-
-    font-weight: 400;
-
-    line-height: 1.6;
-
-    letter-spacing: 0.08em;
 }
 
 
-/* =========================================================
+/* ==========================
    SKILLS
-========================================================= */
+   ========================== */
 
 .skill-list {
     display: grid;
-
-    grid-template-columns:
-        repeat(5, minmax(0, 1fr));
-
-    gap: 20px;
-
-    width: 100%;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
 }
 
 .skill-card {
-    position: relative;
-
-    width: auto;
     min-width: 0;
-    min-height: 190px;
-
+    padding: 25px 20px;
     background: #FFFFFF;
-
-    border-radius: 20px;
-
-    padding: 32px 22px;
-
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.05);
-
+    border: 1px solid #EEE8E2;
+    border-radius: 18px;
     transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-
-    overflow: visible;
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .skill-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.07);
+    transform: translateY(-5px);
+    border-color: #DCCFC2;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
 }
 
-
-/* =========================================================
-   SKILL HOVER EMOJI
-========================================================= */
-
 .skill-icon {
-    position: absolute;
-
-    top: -34px;
-    left: 50%;
-
-    transform:
-        translateX(-50%)
-        translateY(18px);
-
-    font-size: 30px;
-
-    opacity: 0;
-
-    transition:
-        opacity 0.35s ease,
-        transform 0.35s ease;
-
-    pointer-events: none;
+    margin-bottom: 15px;
+    font-size: 24px;
+    line-height: 1;
+    transition: transform 0.3s ease;
 }
 
 .skill-card:hover .skill-icon {
-    opacity: 1;
-
-    transform:
-        translateX(-50%)
-        translateY(0);
+    transform: translateY(-3px) scale(1.08);
 }
-
-
-/* =========================================================
-   SKILL TITLE
-========================================================= */
 
 .skill-card h3 {
-    margin-bottom: 18px;
-
-    color: #3F3933;
-
-    font-size: 17px;
-
+    margin: 0 0 15px;
+    color: #4B433C;
+    font-size: 16px;
     font-weight: 600;
-
-    line-height: 1.5;
+    line-height: 1.4;
 }
-
-
-/* =========================================================
-   SKILL NORMAL ITEMS
-========================================================= */
 
 .skill-card p {
-    margin: 0 0 7px;
-
-    color: #6A625A;
-
+    margin: 5px 0;
+    color: #746C64;
     font-size: 13px;
-
-    font-weight: 400;
-
-    line-height: 1.65;
+    line-height: 1.8;
 }
 
-
-/* =========================================================
-   SKILL TOOLS
-========================================================= */
-
-.skill-tools {
-    margin-top: 4px;
-}
-
-.skill-tool {
-    margin: 0;
-
-    color: #6A625A;
-
-    font-size: 14px;
-
+.skill-main {
+    margin: 0 !important;
+    color: #6A625A !important;
+    font-size: 14px !important;
     font-weight: 400;
-
     line-height: 1.8;
 }
 
 .skill-sub {
-    margin: 0 0 0 12px;
-
-    color: #9A9188;
-
-    font-size: 12px;
-
+    margin: 0 0 0 12px !important;
+    color: #9A9188 !important;
+    font-size: 12px !important;
     font-weight: 400;
-
     line-height: 1.8;
 }
 
 .skill-sql {
-    margin-top: 7px;
+    margin-top: 7px !important;
 }
 
 
-/* 兼容之前 HTML 中的 skill-main */
-
-.skill-card .skill-main {
-    margin: 0;
-
-    color: #6A625A;
-
-    font-size: 14px;
-
-    font-weight: 400;
-
-    line-height: 1.8;
-}
-
-.skill-card .skill-main + .skill-sub {
-    margin-top: 0;
-}
-
-
-/* =========================================================
+/* ==========================
    LIFE
-========================================================= */
+   ========================== */
+
+#life.card {
+    padding: 50px;
+}
 
 .life-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
-
     width: 100%;
 }
 
 .life-card {
     width: 100%;
-
-    background: #FFFFFF;
-
-    border-radius: 20px;
-
     padding: 24px;
-
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.05);
-
+    background: #FFFFFF;
+    border: 1px solid #EEE8E2;
+    border-radius: 20px;
     overflow: hidden;
-
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.045);
     transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .life-card:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.07);
+    transform: translateY(-5px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.07);
 }
 
 .life-card h3 {
     margin: 0 0 18px;
-
-    color: #3F3933;
-
+    color: #8B6F55;
     font-size: 18px;
-
-    font-weight: 500;
-
+    font-weight: 700;
     line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.18em;
+    text-indent: 0.18em;
 }
-
-
-/* =========================================================
-   LIFE 1:1 IMAGE
-========================================================= */
 
 .life-image {
     width: 100%;
-
     aspect-ratio: 1 / 1;
-
-    border-radius: 16px;
-
     background: #F3EEE8;
-
+    border-radius: 16px;
     overflow: hidden;
 }
 
 .life-image img {
+    display: block;
     width: 100%;
     height: 100%;
-
-    display: block;
-
     object-fit: cover;
-
     border-radius: 16px;
 }
 
 
-/* =========================================================
-   LIFE TAGS
-   兼容旧 HTML
-========================================================= */
+/* ==========================
+   REMOVE OLD LIFE ELEMENTS
+   ========================== */
 
-.life-tags {
-    display: flex;
-
-    gap: 10px;
-
-    margin-bottom: 30px;
-}
-
-.life-tags span {
-    padding: 6px 13px;
-
-    border:
-        1px solid rgba(139, 111, 85, 0.25);
-
-    border-radius: 20px;
-
-    color: #8B7866;
-
-    background: #FBF9F6;
-
-    font-size: 12px;
-}
-
-
-/* =========================================================
-   LIFE OLD COLLAGE
-   兼容旧 HTML
-========================================================= */
-
+.life-tags,
 .life-collage {
-    width: 100%;
-
-    aspect-ratio: 16 / 9;
-
-    border-radius: 20px;
-
-    background: #F3EEE8;
-
-    overflow: hidden;
+    display: none;
 }
 
 
-/* =========================================================
+/* ==========================
    CONTACT
-========================================================= */
+   ========================== */
+
+#contact .card {
+    padding: 50px;
+}
 
 .contact-list {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
-
     width: 100%;
 }
 
 .contact-item {
     display: flex;
-
     flex-direction: column;
-
+    align-items: center;
     justify-content: space-between;
-
     min-height: 190px;
-
-    padding: 30px;
-
+    padding: 30px 24px;
     background: #FFFFFF;
-
+    border: 1px solid #EEE8E2;
     border-radius: 20px;
-
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.05);
-
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.045);
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
 
 .contact-item:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.07);
+    transform: translateY(-5px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.07);
 }
-
-
-/* Contact label */
 
 .contact-label {
     color: #8B6F55;
-
     font-size: 11px;
-
-    font-weight: 600;
-
-    letter-spacing: 0.18em;
-
+    font-weight: 700;
+    letter-spacing: 0.2em;
     line-height: 1.5;
 }
 
-
-/* Contact actual information */
-
 .contact-value {
-    color: #3F3933;
-
+    color: #8B6F55;
     font-size: 24px;
-
-    font-weight: 600;
-
+    font-weight: 700;
     line-height: 1.35;
-
+    text-align: center;
     word-break: break-word;
 }
 
 
-/* =========================================================
-   PROJECT SUBMENU
-========================================================= */
-
-.sub-menu {
-    max-height: 0;
-
-    overflow: hidden;
-
-    opacity: 0;
-
-    margin-top: 0;
-
-    transition:
-        max-height 0.4s ease,
-        opacity 0.3s ease,
-        margin-top 0.3s ease;
-}
-
-.project-menu.active .sub-menu {
-    max-height: 500px;
-
-    opacity: 1;
-
-    margin-top: 15px;
-}
-
-.sub-menu li {
-    margin-bottom: 10px;
-}
-
-.sub-menu a {
-    font-size: 13px;
-    color: #999;
-}
-
-.sub-menu a:hover {
-    color: #222;
-}
-
-.project-menu.active .sub-menu {
-    display: block;
-}
-
-
-/* =========================================================
-   CURSOR TRAIL
-========================================================= */
+/* ==========================
+   CURSOR
+   ========================== */
 
 .cursor-dot {
     position: fixed;
-
-    width: 8px;
-    height: 8px;
-
+    z-index: 9999;
+    width: 5px;
+    height: 5px;
+    background: #8B6F55;
     border-radius: 50%;
-
     pointer-events: none;
-
-    background: rgba(255, 255, 255, 0.9);
-
-    box-shadow:
-        0 0 10px rgba(255, 255, 255, 0.8),
-        0 0 20px rgba(255, 220, 180, 0.45);
-
-    animation:
-        trail 0.75s linear forwards;
-
-    z-index: 99999;
-}
-
-@keyframes trail {
-
-    from {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    to {
-        opacity: 0;
-        transform: scale(0.2);
-    }
-}
-
-
-/* =========================================================
-   PROJECTS
-   Portfolio Case Studies
-========================================================= */
-
-#projects {
-    display: grid;
-
-    grid-template-columns:
-        230px minmax(0, 1fr);
-
-    gap: 75px;
-
-    align-items: start;
-}
-
-
-/* =========================================================
-   PROJECT LEFT NAVIGATION
-========================================================= */
-
-#projects .timeline {
-    position: sticky;
-    top: 100px;
-}
-
-#projects .timeline > h3 {
-    margin: 0 0 28px;
-
-    font-size: 17px;
-    font-weight: 600;
-
-    line-height: 1.5;
-
-    letter-spacing: 0.04em;
-
-    color: #8B6F55;
-}
-
-#projects .timeline ul {
-    list-style: none;
-}
-
-#projects .project-list,
-#projects .sub-menu {
-    list-style: none;
-
-    margin: 0;
-    padding: 0;
-}
-
-#projects .project-list > li {
-    margin-bottom: 28px;
-}
-
-#projects .project-list > li > a {
-    display: block;
-
-    margin-bottom: 11px;
-
-    color: #4E4740;
-
-    text-decoration: none;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    line-height: 1.6;
-
-    transition: 0.25s ease;
-}
-
-#projects .project-list > li > a:hover {
-    color: #8B6F55;
-}
-
-
-/* 左侧二级导航 */
-
-#projects .sub-menu {
-    margin-left: 4px;
-
-    padding-left: 17px;
-
-    border-left:
-        1px solid rgba(139, 111, 85, 0.25);
-}
-
-#projects .sub-menu li {
-    margin-bottom: 7px;
-}
-
-#projects .sub-menu a {
-    display: block;
-
-    color: #9A9188;
-
-    text-decoration: none;
-
-    font-size: 12px;
-
-    line-height: 1.7;
-
-    transition: 0.2s ease;
-}
-
-#projects .sub-menu a:hover {
-    color: #8B6F55;
-}
-
-
-/* =========================================================
-   PROJECT CONTENT
-========================================================= */
-
-#projects .content {
-    min-width: 0;
-}
-
-#projects .card {
-    margin-bottom: 150px;
-
-    scroll-margin-top: 100px;
-
-    color: #3F3933;
-}
-
-
-/* =========================================================
-   PROJECT NUMBER
-========================================================= */
-
-#projects .project-number {
-    margin-bottom: 12px;
-
-    font-size: 11px;
-    font-weight: 600;
-
-    line-height: 1.5;
-
-    letter-spacing: 0.18em;
-
-    text-transform: uppercase;
-
-    color: #A69A8C;
-}
-
-
-/* =========================================================
-   PROJECT TITLE
-========================================================= */
-
-#projects .card > h2 {
-    margin: 0 0 18px;
-
-    font-size:
-        clamp(30px, 3vw, 44px);
-
-    font-weight: 600;
-
-    line-height: 1.3;
-
-    letter-spacing: -0.025em;
-
-    color: #2F2A25;
-}
-
-
-/* =========================================================
-   PROJECT META / TAGS
-========================================================= */
-
-#projects .project-meta {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    margin-bottom: 70px;
-}
-
-#projects .project-meta span {
-    padding: 5px 11px;
-
-    border:
-        1px solid rgba(139, 111, 85, 0.25);
-
-    border-radius: 20px;
-
-    font-size: 11px;
-
-    line-height: 1.4;
-
-    color: #8B7866;
-
-    background: #FBF9F6;
-}
-
-
-/* =========================================================
-   PROJECT SECTION TITLE
-========================================================= */
-
-#projects .card h3 {
-    position: relative;
-
-    margin: 0 0 24px;
-
-    padding: 0;
-
-    color: #8B6F55;
-
-    font-size: 19px;
-
-    font-weight: 600;
-
-    line-height: 1.5;
-
-    letter-spacing: 0.05em;
-}
-
-#projects .card h3::before {
-    display: none;
-}
-
-
-/* =========================================================
-   PROJECT SUBSECTION
-========================================================= */
-
-#projects .card h4 {
-    margin: 34px 0 15px;
-
-    color: #5F5144;
-
-    font-size: 15px;
-
-    font-weight: 600;
-
-    line-height: 1.6;
-
-    letter-spacing: 0.03em;
-}
-
-
-/* =========================================================
-   PROJECT BODY TEXT
-========================================================= */
-
-#projects .card p {
-    margin: 0 0 24px;
-
-    color: #5B554F;
-
-    font-size: 15px;
-
-    line-height: 1.95;
-
-    letter-spacing: 0.015em;
-}
-
-#projects .card p + p {
-    margin-top: 8px;
-}
-
-
-/* =========================================================
-   DIVIDER
-========================================================= */
-
-#projects .card hr {
-    display: block;
-
-    width: 100%;
-    height: 1px;
-
-    margin: 64px 0 60px;
-
-    padding: 0;
-
-    border: 0;
-
-    border-top:
-        1px solid #DED5CA;
-}
-
-#projects .card hr + h3 {
-    margin-top: 0;
-}
-
-
-/* =========================================================
-   LIST
-========================================================= */
-
-#projects .card ul {
-    margin: 14px 0 30px;
-
-    padding-left: 30px;
-}
-
-#projects .card li {
-    margin-bottom: 10px;
-
-    padding-left: 3px;
-
-    color: #5B554F;
-
-    font-size: 15px;
-
-    line-height: 1.9;
-}
-
-#projects .card li::marker {
-    color: #A58F78;
-
-    font-size: 0.6em;
-}
-
-
-/* =========================================================
-   STRONG TEXT
-========================================================= */
-
-#projects .card strong {
-    color: #463A30;
-
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   HIGHLIGHT NUMBERS
-========================================================= */
-
-#projects .highlight,
-#projects .metric-number {
-    color: #8B6F55;
-
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   RESULT BOX
-========================================================= */
-
-#projects .result-box {
-    margin: 30px 0 38px;
-
-    padding: 24px 28px;
-
-    border-left:
-        2px solid #B8A28B;
-
-    background: #F7F3EE;
-}
-
-#projects .result-box p {
-    margin-bottom: 11px;
-}
-
-#projects .result-box p:last-child {
-    margin-bottom: 0;
-}
-
-
-/* =========================================================
-   METRICS GRID
-========================================================= */
-
-#projects .metrics-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 16px;
-
-    margin: 30px 0 40px;
-}
-
-#projects .metric {
-    padding: 24px;
-
-    background: #F7F3EE;
-
-    border-radius: 14px;
-}
-
-#projects .metric-number {
-    display: block;
-
-    margin-bottom: 8px;
-
-    font-size: 25px;
-
-    line-height: 1.3;
-}
-
-#projects .metric-label {
-    color: #777;
-
-    font-size: 13px;
-
-    line-height: 1.6;
-}
-
-
-/* =========================================================
-   PROCESS FLOW
-========================================================= */
-
-#projects .process-flow {
-    margin: 28px 0 38px;
-
-    padding: 24px 26px;
-
-    background: #F7F3EE;
-
-    border-radius: 14px;
-
-    color: #5B554F;
-
-    font-size: 14px;
-
-    line-height: 2;
-}
-
-
-/* =========================================================
-   REAL TABLE
-========================================================= */
-
-#projects .case-table-wrapper {
-    width: 100%;
-
-    overflow-x: auto;
-
-    margin: 30px 0 42px;
-}
-
-#projects .case-table {
-    width: 100%;
-
-    border-collapse: collapse;
-
-    table-layout: fixed;
-
-    color: #514A43;
-
-    font-size: 14px;
-
-    line-height: 1.75;
-}
-
-#projects .case-table th {
-    padding: 15px 18px;
-
-    color: #6F5945;
-
-    background: #F3EEE8;
-
-    font-weight: 600;
-
-    text-align: left;
-
-    vertical-align: top;
-
-    border:
-        1px solid #DED5CA;
-}
-
-#projects .case-table td {
-    padding: 16px 18px;
-
-    color: #5B554F;
-
-    background: #FFFFFF;
-
-    vertical-align: top;
-
-    border:
-        1px solid #E4DDD5;
-}
-
-
-/* =========================================================
-   PROJECT SEPARATION
-========================================================= */
-
-#projects .card + .card {
-    margin-top: 110px;
-}
-
-
-/* =========================================================
-   EXPERIENCE
-========================================================= */
-
-#experience {
-    display: grid;
-
-    grid-template-columns:
-        230px minmax(0, 1fr);
-
-    gap: 75px;
-
-    align-items: start;
-}
-
-#experience .timeline {
-    position: sticky;
-    top: 100px;
-
-    width: auto;
-}
-
-#experience .timeline h3 {
-    margin: 0 0 28px;
-
-    color: #8B6F55;
-
-    font-size: 17px;
-    font-weight: 600;
-
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-}
-
-#experience .experience-list {
-    list-style: none;
-
-    margin: 0;
-    padding: 0;
-}
-
-#experience .experience-list li {
-    margin-bottom: 24px;
-    padding: 0;
-}
-
-#experience .experience-list a {
-    display: block;
-
-    color: #9A9188;
-
-    text-decoration: none;
-
-    font-size: 14px;
-    line-height: 1.6;
-
-    transition: color 0.25s ease;
-}
-
-#experience .experience-list a:hover {
-    color: #8B6F55;
-}
-
-#experience .content {
-    min-width: 0;
-    width: 100%;
-}
-
-#experience .card {
-    width: 100%;
-
-    margin-bottom: 150px;
-
-    scroll-margin-top: 100px;
-
-    color: #3F3933;
-}
-
-#experience .card + .card {
-    margin-top: 110px;
-}
-
-#experience .project-number {
-    margin-bottom: 12px;
-
-    color: #A69A8C;
-
-    font-size: 11px;
-    font-weight: 600;
-
-    line-height: 1.5;
-
-    letter-spacing: 0.18em;
-
-    text-transform: uppercase;
-}
-
-#experience .card > h2 {
-    margin: 0 0 18px;
-
-    color: #2F2A25;
-
-    font-size: clamp(30px, 3vw, 44px);
-
-    font-weight: 600;
-
-    line-height: 1.3;
-
-    letter-spacing: -0.025em;
-}
-
-#experience .project-meta {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    margin-bottom: 70px;
-}
-
-#experience .project-meta span {
-    padding: 5px 11px;
-
-    border: 1px solid rgba(139, 111, 85, 0.25);
-
-    border-radius: 20px;
-
-    color: #8B7866;
-
-    background: #FBF9F6;
-
-    font-size: 11px;
-
-    line-height: 1.4;
-}
-
-#experience .card h3 {
-    position: relative;
-
-    margin: 0 0 24px;
-
-    padding: 0;
-
-    color: #8B6F55;
-
-    font-size: 19px;
-
-    font-weight: 600;
-
-    line-height: 1.5;
-
-    letter-spacing: 0.05em;
-}
-
-#experience .card h4 {
-    margin: 34px 0 15px;
-
-    color: #5F5144;
-
-    font-size: 15px;
-
-    font-weight: 600;
-
-    line-height: 1.6;
-
-    letter-spacing: 0.03em;
-}
-
-#experience .card p {
-    margin: 0 0 24px;
-
-    color: #5B554F;
-
-    font-size: 15px;
-
-    line-height: 1.95;
-
-    letter-spacing: 0.015em;
-}
-
-#experience .card p + p {
-    margin-top: 8px;
-}
-
-#experience .card strong {
-    color: #463A30;
-
-    font-weight: 600;
-}
-
-#experience .card hr {
-    display: block;
-
-    width: 100%;
-    height: 1px;
-
-    margin: 64px 0 60px;
-
-    padding: 0;
-
-    border: 0;
-
-    border-top: 1px solid #DED5CA;
-}
-
-#experience .card .project-meta + section {
-    margin-top: 0;
-}
-
-#experience .card h3 + .project-meta {
-    margin-top: 24px;
-
-    margin-bottom: 0;
-}
-
-
-/* =========================================================
-   FINAL VISUAL CONSISTENCY
-   Skills / Life / Contact 与 Projects / Experience 统一
-========================================================= */
-
-.skill-card,
-.life-card,
-.contact-item {
-    background: #FFFFFF;
+    transform: translate(-50%, -50%);
 }
 
 
-/* =========================================================
+/* ==========================
    MOBILE
-========================================================= */
+   ========================== */
 
-@media screen and (max-width: 768px) {
+@media (max-width: 1100px) {
 
     .section {
-        min-height: auto;
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: 40px;
+        width: min(1100px, calc(100% - 60px));
+    }
 
+    .skill-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .life-grid,
+    .contact-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .logo {
+        top: 20px;
+        left: 20px;
+    }
+
+    .bottom-nav {
+        right: 20px;
+        bottom: 20px;
+        gap: 14px;
+        padding: 10px 14px;
+    }
+
+    .section {
         display: block;
-
-        padding: 70px 20px;
+        width: calc(100% - 40px);
+        padding: 90px 0;
     }
-
-
-    /* =====================================================
-       MOBILE HOME
-    ===================================================== */
-
-    .home {
-        padding-top: 100px;
-    }
-
-    .hero-left {
-        width: 100%;
-    }
-
-    .hero-left h1 {
-        font-size: 48px;
-
-        line-height: 1.1;
-
-        margin-bottom: 25px;
-    }
-
-    .slogan {
-        height: auto;
-
-        min-height: 40px;
-
-        font-size: 20px;
-
-        margin-bottom: 25px;
-    }
-
-    .job {
-        font-size: 14px;
-    }
-
-
-    /* =====================================================
-       MOBILE IMAGE
-    ===================================================== */
-
-    .hero-right {
-        width: 100%;
-
-        margin-top: 20px;
-    }
-
-    .photo-card {
-        width: 55%;
-
-        margin: auto;
-    }
-
-
-    /* =====================================================
-       MOBILE TIMELINE
-    ===================================================== */
 
     .timeline {
-        width: 100%;
-
-        position: relative;
-
-        top: auto;
-
+        position: static;
         margin-bottom: 35px;
     }
 
-
-    /* =====================================================
-       MOBILE CONTENT CARD
-    ===================================================== */
-
-    .card {
-        padding: 25px 18px;
-
-        border-radius: 18px;
+    .home {
+        min-height: auto;
+        padding-top: 140px;
     }
 
+    .hero-left h1 {
+        font-size: 64px;
+    }
 
-    /* =====================================================
-       MOBILE BOTTOM NAV
-    ===================================================== */
+    .hero-right {
+        margin-top: 50px;
+    }
+
+    .card {
+        padding: 30px;
+    }
+
+    #life.card,
+    #contact .card {
+        padding: 30px;
+    }
+
+    .skill-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .life-grid,
+    .contact-list {
+        grid-template-columns: 1fr;
+    }
+
+    .result-box,
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-item {
+        min-height: 160px;
+    }
+
+    .contact-value {
+        font-size: 21px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .section {
+        width: calc(100% - 28px);
+    }
+
+    .card {
+        padding: 24px;
+        border-radius: 20px;
+    }
+
+    #life.card,
+    #contact .card {
+        padding: 24px;
+    }
+
+    .skill-list {
+        grid-template-columns: 1fr;
+    }
 
     .bottom-nav {
-        left: 50%;
-
-        bottom: 15px;
-
-        width:
-            calc(100% - 30px);
-
-        padding: 12px 10px;
-
-        gap: 0;
-
-        justify-content:
-            space-around;
+        left: 14px;
+        right: 14px;
+        justify-content: space-between;
+        gap: 5px;
     }
 
     .bottom-nav a {
         flex: 1;
     }
 
-    .nav-cn {
-        font-size: 11px;
+    .hero-left h1 {
+        font-size: 52px;
     }
-
-    .nav-en {
-        font-size: 7px;
-
-        letter-spacing: 1px;
-    }
-
-
-    /* =====================================================
-       MOBILE TIMELINE SUBMENU
-    ===================================================== */
-
-    .timeline .sub-menu {
-        display: none;
-    }
-
-
-    /* =====================================================
-       MOBILE PROJECTS
-    ===================================================== */
-
-    #projects {
-        display: block;
-    }
-
-    #projects .timeline {
-        position: relative;
-
-        top: auto;
-
-        width: 100%;
-
-        margin-bottom: 45px;
-    }
-
-    #projects .card {
-        margin-bottom: 80px;
-
-        padding: 28px 22px;
-    }
-
-    #projects .card + .card {
-        margin-top: 70px;
-    }
-
-    #projects .card > h2 {
-        font-size: 30px;
-
-        line-height: 1.35;
-    }
-
-    #projects .project-meta {
-        margin-bottom: 48px;
-    }
-
-    #projects .card h3 {
-        font-size: 18px;
-
-        margin-bottom: 20px;
-    }
-
-    #projects .card h4 {
-        font-size: 15px;
-
-        margin-top: 28px;
-    }
-
-    #projects .card p {
-        font-size: 14px;
-
-        line-height: 1.9;
-    }
-
-    #projects .card hr {
-        margin: 50px 0 48px;
-    }
-
-    #projects .card ul {
-        padding-left: 25px;
-    }
-
-    #projects .card li {
-        font-size: 14px;
-
-        padding-left: 2px;
-    }
-
-    #projects .metrics-grid {
-        grid-template-columns: 1fr;
-    }
-
-    #projects .case-table {
-        min-width: 620px;
-    }
-
-
-    /* =====================================================
-       MOBILE EXPERIENCE
-    ===================================================== */
-
-    #experience {
-        display: block;
-    }
-
-    #experience .timeline {
-        position: relative;
-
-        top: auto;
-
-        width: 100%;
-
-        margin-bottom: 45px;
-    }
-
-    #experience .experience-list {
-        display: flex;
-
-        flex-wrap: wrap;
-
-        gap: 10px 20px;
-    }
-
-    #experience .experience-list li {
-        margin-bottom: 0;
-    }
-
-    #experience .card {
-        margin-bottom: 80px;
-
-        padding: 28px 22px;
-    }
-
-    #experience .card + .card {
-        margin-top: 70px;
-    }
-
-    #experience .card > h2 {
-        font-size: 30px;
-
-        line-height: 1.35;
-    }
-
-    #experience .project-meta {
-        margin-bottom: 48px;
-    }
-
-    #experience .card h3 {
-        font-size: 18px;
-
-        margin-bottom: 20px;
-    }
-
-    #experience .card h4 {
-        font-size: 15px;
-
-        margin-top: 28px;
-    }
-
-    #experience .card p {
-        font-size: 14px;
-
-        line-height: 1.9;
-    }
-
-    #experience .card hr {
-        margin: 50px 0 48px;
-    }
-
-
-    /* =====================================================
-       MOBILE SKILLS
-    ===================================================== */
 
     .section-heading h2,
     .life-heading h2,
     .contact-heading h2 {
         font-size: 24px;
-
-        letter-spacing: 0.07em;
-    }
-
-    .skill-list {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-        gap: 12px;
-    }
-
-    .skill-card {
-        min-height: 175px;
-
-        padding: 28px 18px;
-
-        border-radius: 18px;
-    }
-
-    .skill-card h3 {
-        font-size: 16px;
-    }
-
-    .skill-card p,
-    .skill-tool {
-        font-size: 12px;
-    }
-
-    .skill-sub {
-        font-size: 11px;
-    }
-
-
-    /* =====================================================
-       MOBILE LIFE
-    ===================================================== */
-
-    .life-grid {
-        grid-template-columns: 1fr;
-
-        gap: 14px;
-    }
-
-    .life-card {
-        padding: 20px;
-
-        border-radius: 18px;
-    }
-
-    .life-card h3 {
-        font-size: 17px;
-
-        margin-bottom: 14px;
-    }
-
-    .life-image {
-        border-radius: 14px;
-    }
-
-    .life-tags {
-        margin-bottom: 22px;
-    }
-
-    .life-collage {
-        border-radius: 16px;
-    }
-
-
-    /* =====================================================
-       MOBILE CONTACT
-    ===================================================== */
-
-    .contact-list {
-        grid-template-columns: 1fr;
-
-        gap: 12px;
-    }
-
-    .contact-item {
-        min-height: 130px;
-
-        padding: 24px;
-
-        border-radius: 18px;
     }
 
     .contact-value {
-        font-size: 21px;
+        font-size: 20px;
     }
-
 }
