@@ -1,3 +1,4 @@
+
 /* ==========================
    Brooklyn Yu Portfolio
    Beige Version
@@ -55,6 +56,7 @@ img {
 
 .card {
     width: 100%;
+    margin-bottom: 50px;
     background: #FFFFFF;
     border-radius: 24px;
     padding: 50px;
@@ -106,26 +108,32 @@ hr {
 
 .bottom-nav {
     position: fixed;
-    right: 40px;
+    left: 50%;
     bottom: 30px;
     z-index: 100;
     display: flex;
-    gap: 24px;
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.92);
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    padding: 18px 42px;
+    background: rgba(255, 255, 255, 0.88);
     border: 1px solid #E8E1D9;
     border-radius: 999px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(18px);
+    transform: translateX(-50%);
 }
 
 .bottom-nav a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1px;
+    justify-content: center;
+    gap: 2px;
     color: #7A7067;
-    font-size: 10px;
+    font-size: 15px;
+    line-height: 1.3;
+    white-space: nowrap;
     transition: color 0.25s ease;
 }
 
@@ -134,11 +142,11 @@ hr {
 }
 
 .nav-cn {
-    font-size: 11px;
+    font-size: 15px;
 }
 
 .nav-en {
-    font-size: 8px;
+    font-size: 9px;
     letter-spacing: 0.12em;
 }
 
@@ -327,6 +335,9 @@ hr {
     font-weight: 500;
 }
 
+
+/* PROJECT RESULT */
+
 .result-box,
 .metrics-grid {
     display: grid;
@@ -384,6 +395,9 @@ hr {
     font-size: 13px;
 }
 
+
+/* TABLE */
+
 .case-table-wrapper {
     overflow-x: auto;
     margin-top: 25px;
@@ -410,6 +424,9 @@ hr {
 .case-table td {
     color: #746C64;
 }
+
+
+/* METRICS */
 
 .metrics-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -499,7 +516,8 @@ hr {
 .skill-list {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 16px;
+    gap: 20px;
+    width: 100%;
 }
 
 .skill-card {
@@ -629,20 +647,10 @@ hr {
 
 
 /* ==========================
-   REMOVE OLD LIFE ELEMENTS
-   ========================== */
-
-.life-tags,
-.life-collage {
-    display: none;
-}
-
-
-/* ==========================
    CONTACT
    ========================== */
 
-#contact .card {
+#contact.card {
     padding: 50px;
 }
 
@@ -681,6 +689,7 @@ hr {
     font-weight: 700;
     letter-spacing: 0.2em;
     line-height: 1.5;
+    text-align: center;
 }
 
 .contact-value {
@@ -690,22 +699,6 @@ hr {
     line-height: 1.35;
     text-align: center;
     word-break: break-word;
-}
-
-
-/* ==========================
-   CURSOR
-   ========================== */
-
-.cursor-dot {
-    position: fixed;
-    z-index: 9999;
-    width: 5px;
-    height: 5px;
-    background: #8B6F55;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
 }
 
 
@@ -729,6 +722,10 @@ hr {
     .contact-list {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+
+    .bottom-nav {
+        gap: 30px;
+    }
 }
 
 
@@ -740,10 +737,26 @@ hr {
     }
 
     .bottom-nav {
+        left: 20px;
         right: 20px;
         bottom: 20px;
-        gap: 14px;
-        padding: 10px 14px;
+        justify-content: center;
+        gap: 20px;
+        padding: 12px 18px;
+        transform: none;
+    }
+
+    .bottom-nav a {
+        flex: 1;
+        font-size: 13px;
+    }
+
+    .nav-cn {
+        font-size: 13px;
+    }
+
+    .nav-en {
+        font-size: 8px;
     }
 
     .section {
@@ -772,20 +785,23 @@ hr {
 
     .card {
         padding: 30px;
+        margin-bottom: 35px;
     }
 
     #life.card,
-    #contact .card {
+    #contact.card {
         padding: 30px;
     }
 
     .skill-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
     }
 
     .life-grid,
     .contact-list {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .result-box,
@@ -811,11 +827,12 @@ hr {
 
     .card {
         padding: 24px;
+        margin-bottom: 28px;
         border-radius: 20px;
     }
 
     #life.card,
-    #contact .card {
+    #contact.card {
         padding: 24px;
     }
 
@@ -826,8 +843,9 @@ hr {
     .bottom-nav {
         left: 14px;
         right: 14px;
-        justify-content: space-between;
+        bottom: 14px;
         gap: 5px;
+        padding: 10px 12px;
     }
 
     .bottom-nav a {
@@ -848,3 +866,4 @@ hr {
         font-size: 20px;
     }
 }
+
