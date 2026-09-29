@@ -258,7 +258,7 @@ body {
 }
 
 .card {
-    background: #fff;
+    background: #FFFFFF;
 
     border-radius: 24px;
 
@@ -282,6 +282,52 @@ body {
 
 
 /* =========================================================
+   COMMON SECTION HEADINGS
+   SKILLS / LIFE / CONTACT
+========================================================= */
+
+.section-heading,
+.life-heading,
+.contact-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading h2,
+.life-heading h2,
+.contact-heading h2 {
+    margin: 0 0 8px;
+
+    color: #2F2A25;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+    line-height: 1.25;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+.section-heading p,
+.life-heading p,
+.contact-heading p {
+    margin: 0;
+
+    color: #9A9188;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
    SKILLS
 ========================================================= */
 
@@ -291,7 +337,7 @@ body {
     grid-template-columns:
         repeat(5, minmax(0, 1fr));
 
-    gap: 16px;
+    gap: 20px;
 
     width: 100%;
 }
@@ -299,14 +345,18 @@ body {
 .skill-card {
     position: relative;
 
+    width: auto;
     min-width: 0;
     min-height: 190px;
 
-    background: #F7F6F2;
+    background: #FFFFFF;
 
     border-radius: 20px;
 
     padding: 32px 22px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.05);
 
     transition:
         transform 0.35s ease,
@@ -316,14 +366,16 @@ body {
 }
 
 .skill-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 
     box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.06);
+        0 12px 30px rgba(0, 0, 0, 0.07);
 }
 
 
-/* Hover Emoji */
+/* =========================================================
+   SKILL HOVER EMOJI
+========================================================= */
 
 .skill-icon {
     position: absolute;
@@ -355,7 +407,9 @@ body {
 }
 
 
-/* Skill title */
+/* =========================================================
+   SKILL TITLE
+========================================================= */
 
 .skill-card h3 {
     margin-bottom: 18px;
@@ -363,13 +417,16 @@ body {
     color: #3F3933;
 
     font-size: 17px;
+
     font-weight: 600;
 
     line-height: 1.5;
 }
 
 
-/* Skill items */
+/* =========================================================
+   SKILL NORMAL ITEMS
+========================================================= */
 
 .skill-card p {
     margin: 0 0 7px;
@@ -378,30 +435,65 @@ body {
 
     font-size: 13px;
 
+    font-weight: 400;
+
     line-height: 1.65;
 }
 
 
-/* Excel subordinate items */
+/* =========================================================
+   SKILL TOOLS
+========================================================= */
 
-.skill-card .skill-main {
-    margin-bottom: 3px;
-
-    color: #4F4841;
-
-    font-weight: 500;
+.skill-tools {
+    margin-top: 4px;
 }
 
-.skill-card .skill-sub {
-    margin-left: 10px;
+.skill-tool {
+    margin: 0;
+
+    color: #6A625A;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    line-height: 1.8;
+}
+
+.skill-sub {
+    margin: 0 0 0 12px;
 
     color: #9A9188;
 
     font-size: 12px;
+
+    font-weight: 400;
+
+    line-height: 1.8;
 }
 
-.skill-card .skill-sql {
-    margin-top: 12px;
+.skill-sql {
+    margin-top: 7px;
+}
+
+
+/* 兼容之前 HTML 中的 skill-main */
+
+.skill-card .skill-main {
+    margin: 0;
+
+    color: #6A625A;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    line-height: 1.8;
+}
+
+.skill-card .skill-main + .skill-sub {
+    margin-top: 0;
 }
 
 
@@ -409,38 +501,88 @@ body {
    LIFE
 ========================================================= */
 
+.life-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    width: 100%;
+}
+
 .life-card {
+    width: 100%;
+
+    background: #FFFFFF;
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.05);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.life-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.07);
+}
+
+.life-card h3 {
+    margin: 0 0 18px;
+
+    color: #3F3933;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   LIFE 1:1 IMAGE
+========================================================= */
+
+.life-image {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    border-radius: 16px;
+
+    background: #F3EEE8;
+
     overflow: hidden;
 }
 
-.life-heading {
-    margin-bottom: 28px;
-}
+.life-image img {
+    width: 100%;
+    height: 100%;
 
-.life-heading h2 {
-    margin-bottom: 6px;
+    display: block;
 
-    color: #2F2A25;
+    object-fit: cover;
 
-    font-size: clamp(30px, 3vw, 44px);
-
-    font-weight: 600;
-
-    line-height: 1.3;
-
-    letter-spacing: -0.025em;
-}
-
-.life-heading p {
-    color: #9A9188;
-
-    font-size: 13px;
-
-    letter-spacing: 0.08em;
+    border-radius: 16px;
 }
 
 
-/* Life tags */
+/* =========================================================
+   LIFE TAGS
+   兼容旧 HTML
+========================================================= */
 
 .life-tags {
     display: flex;
@@ -466,7 +608,10 @@ body {
 }
 
 
-/* 16:9 collage */
+/* =========================================================
+   LIFE OLD COLLAGE
+   兼容旧 HTML
+========================================================= */
 
 .life-collage {
     width: 100%;
@@ -485,46 +630,15 @@ body {
    CONTACT
 ========================================================= */
 
-.contact-card {
-    overflow: hidden;
-}
-
-.contact-heading {
-    margin-bottom: 40px;
-}
-
-.contact-heading h2 {
-    margin-bottom: 6px;
-
-    color: #2F2A25;
-
-    font-size: clamp(30px, 3vw, 44px);
-
-    font-weight: 600;
-
-    line-height: 1.3;
-
-    letter-spacing: -0.025em;
-}
-
-.contact-heading p {
-    color: #9A9188;
-
-    font-size: 13px;
-
-    letter-spacing: 0.08em;
-}
-
-
-/* Contact cards */
-
 .contact-list {
     display: grid;
 
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
 
-    gap: 16px;
+    gap: 20px;
+
+    width: 100%;
 }
 
 .contact-item {
@@ -534,13 +648,16 @@ body {
 
     justify-content: space-between;
 
-    min-height: 150px;
+    min-height: 190px;
 
-    padding: 26px;
+    padding: 30px;
 
-    background: #F7F6F2;
+    background: #FFFFFF;
 
-    border-radius: 18px;
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.05);
 
     transition:
         transform 0.3s ease,
@@ -551,26 +668,37 @@ body {
     transform: translateY(-6px);
 
     box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.05);
+        0 12px 30px rgba(0, 0, 0, 0.07);
 }
+
+
+/* Contact label */
 
 .contact-label {
     color: #8B6F55;
 
     font-size: 11px;
+
     font-weight: 600;
 
     letter-spacing: 0.18em;
+
+    line-height: 1.5;
 }
 
+
+/* Contact actual information */
+
 .contact-value {
-    color: #4E4740;
+    color: #3F3933;
 
-    font-size: 14px;
+    font-size: 24px;
 
-    line-height: 1.6;
+    font-weight: 600;
 
-    word-break: break-all;
+    line-height: 1.35;
+
+    word-break: break-word;
 }
 
 
@@ -1163,7 +1291,8 @@ body {
 #experience {
     display: grid;
 
-    grid-template-columns: 230px minmax(0, 1fr);
+    grid-template-columns:
+        230px minmax(0, 1fr);
 
     gap: 75px;
 
@@ -1373,6 +1502,18 @@ body {
 
 
 /* =========================================================
+   FINAL VISUAL CONSISTENCY
+   Skills / Life / Contact 与 Projects / Experience 统一
+========================================================= */
+
+.skill-card,
+.life-card,
+.contact-item {
+    background: #FFFFFF;
+}
+
+
+/* =========================================================
    MOBILE
 ========================================================= */
 
@@ -1387,7 +1528,9 @@ body {
     }
 
 
-    /* 首页 */
+    /* =====================================================
+       MOBILE HOME
+    ===================================================== */
 
     .home {
         padding-top: 100px;
@@ -1420,7 +1563,9 @@ body {
     }
 
 
-    /* 图片 */
+    /* =====================================================
+       MOBILE IMAGE
+    ===================================================== */
 
     .hero-right {
         width: 100%;
@@ -1435,7 +1580,9 @@ body {
     }
 
 
-    /* 左侧菜单 */
+    /* =====================================================
+       MOBILE TIMELINE
+    ===================================================== */
 
     .timeline {
         width: 100%;
@@ -1448,7 +1595,9 @@ body {
     }
 
 
-    /* 内容卡片 */
+    /* =====================================================
+       MOBILE CONTENT CARD
+    ===================================================== */
 
     .card {
         padding: 25px 18px;
@@ -1457,7 +1606,9 @@ body {
     }
 
 
-    /* 底部导航 */
+    /* =====================================================
+       MOBILE BOTTOM NAV
+    ===================================================== */
 
     .bottom-nav {
         left: 50%;
@@ -1490,7 +1641,9 @@ body {
     }
 
 
-    /* 手机端隐藏项目子导航 */
+    /* =====================================================
+       MOBILE TIMELINE SUBMENU
+    ===================================================== */
 
     .timeline .sub-menu {
         display: none;
@@ -1653,6 +1806,14 @@ body {
        MOBILE SKILLS
     ===================================================== */
 
+    .section-heading h2,
+    .life-heading h2,
+    .contact-heading h2 {
+        font-size: 24px;
+
+        letter-spacing: 0.07em;
+    }
+
     .skill-list {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
@@ -1664,20 +1825,49 @@ body {
         min-height: 175px;
 
         padding: 28px 18px;
+
+        border-radius: 18px;
     }
 
     .skill-card h3 {
         font-size: 16px;
     }
 
-    .skill-card p {
+    .skill-card p,
+    .skill-tool {
         font-size: 12px;
+    }
+
+    .skill-sub {
+        font-size: 11px;
     }
 
 
     /* =====================================================
        MOBILE LIFE
     ===================================================== */
+
+    .life-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .life-card {
+        padding: 20px;
+
+        border-radius: 18px;
+    }
+
+    .life-card h3 {
+        font-size: 17px;
+
+        margin-bottom: 14px;
+    }
+
+    .life-image {
+        border-radius: 14px;
+    }
 
     .life-tags {
         margin-bottom: 22px;
@@ -1699,7 +1889,15 @@ body {
     }
 
     .contact-item {
-        min-height: 110px;
+        min-height: 130px;
+
+        padding: 24px;
+
+        border-radius: 18px;
+    }
+
+    .contact-value {
+        font-size: 21px;
     }
 
 }
